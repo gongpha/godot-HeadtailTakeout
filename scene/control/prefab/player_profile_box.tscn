@@ -1,0 +1,82 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scene/control/prefab/player_profile_box.gd" type="Script" id=1]
+[ext_resource path="res://resource/font/big_font.tres" type="DynamicFont" id=2]
+
+[node name="profile" type="PanelContainer"]
+margin_right = 176.0
+margin_bottom = 46.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="hbox" type="HBoxContainer" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 169.0
+margin_bottom = 39.0
+
+[node name="pic" type="TextureRect" parent="hbox"]
+margin_right = 32.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+
+[node name="vbox" type="VBoxContainer" parent="hbox"]
+margin_left = 36.0
+margin_right = 162.0
+margin_bottom = 32.0
+
+[node name="name" type="Label" parent="hbox/vbox"]
+margin_top = 9.0
+margin_right = 126.0
+margin_bottom = 23.0
+size_flags_vertical = 6
+text = "@@@PLAYER_NAME"
+
+[node name="val" type="Label" parent="hbox/vbox"]
+visible = false
+margin_top = 18.0
+margin_right = 126.0
+margin_bottom = 56.0
+custom_fonts/font = ExtResource( 2 )
+text = "@@@"
+align = 1
+
+[node name="profile" type="Control" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 7.0
+margin_bottom = 7.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="state" type="ColorRect" parent="profile"]
+visible = false
+margin_left = -27.0
+margin_top = 16.0
+margin_right = 37.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 64, 24 )
+rect_rotation = -30.0
+color = Color( 0.603922, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label" type="Label" parent="profile/state"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 5
+text = "@@@"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}

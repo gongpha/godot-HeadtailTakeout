@@ -1,0 +1,122 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Control",
+"class": "GameRoot",
+"language": "GDScript",
+"path": "res://scene/control/game_root.gd"
+}, {
+"base": "Resource",
+"class": "LocalizationData",
+"language": "GDScript",
+"path": "res://addons/localization_editor/model/LocalizationData.gd"
+}, {
+"base": "Reference",
+"class": "LocalizationKeys",
+"language": "GDScript",
+"path": "res://localization/LocalizationKeys.gd"
+}, {
+"base": "Reference",
+"class": "LocalizationPlaceholders",
+"language": "GDScript",
+"path": "res://localization/LocalizationPlaceholders.gd"
+}, {
+"base": "Resource",
+"class": "LocalizationPlaceholdersData",
+"language": "GDScript",
+"path": "res://addons/localization_editor/model/LocalizationPlaceholdersData.gd"
+}, {
+"base": "Resource",
+"class": "LocalizationSave",
+"language": "GDScript",
+"path": "res://addons/localization_editor/model/LocalizationSave.gd"
+}, {
+"base": "Control",
+"class": "MainMenuControl",
+"language": "GDScript",
+"path": "res://scene/control/mainmenu.gd"
+}, {
+"base": "Reference",
+"class": "Player",
+"language": "GDScript",
+"path": "res://script/player.gd"
+}, {
+"base": "PanelContainer",
+"class": "PlayerList",
+"language": "GDScript",
+"path": "res://scene/control/player_list.gd"
+}, {
+"base": "Control",
+"class": "PlayerProfileBox",
+"language": "GDScript",
+"path": "res://scene/control/prefab/player_profile_box.gd"
+}, {
+"base": "RoundStage",
+"class": "RoundSleepyBox",
+"language": "GDScript",
+"path": "res://scene/round/sleepy_box.gd"
+}, {
+"base": "TextureRect",
+"class": "RoundSleepyBoxBox",
+"language": "GDScript",
+"path": "res://scene/round/sleepy_box_box.gd"
+}, {
+"base": "Control",
+"class": "RoundStage",
+"language": "GDScript",
+"path": "res://scene/round/roundstage.gd"
+} ]
+_global_script_class_icons={
+"GameRoot": "",
+"LocalizationData": "",
+"LocalizationKeys": "",
+"LocalizationPlaceholders": "",
+"LocalizationPlaceholdersData": "",
+"LocalizationSave": "",
+"MainMenuControl": "",
+"Player": "",
+"PlayerList": "",
+"PlayerProfileBox": "",
+"RoundSleepyBox": "",
+"RoundSleepyBoxBox": "",
+"RoundStage": ""
+}
+
+[application]
+
+config/name="HeadtailTakeout"
+run/main_scene="res://scene/control/mainmenu.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+GameMaster="*res://script/game_master.gd"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/localization_editor/plugin.cfg" )
+
+[locale]
+
+test="th"
+translations=PoolStringArray( "res://localization/localizations.en.translation", "res://localization/localizations.th.translation" )
+locale_filter=[ 0, [ "en", "th" ] ]
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
+environment/default_environment="res://default_env.tres"

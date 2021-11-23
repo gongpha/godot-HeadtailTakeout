@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scene/control/player_list.gd" type="Script" id=1]
+
+[node name="list" type="PanelContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="vbox" type="VBoxContainer" parent="."]
+margin_left = 7.0
+margin_top = 273.0
+margin_right = 1017.0
+margin_bottom = 327.0
+size_flags_vertical = 4
+
+[node name="label" type="Label" parent="vbox"]
+margin_right = 1010.0
+margin_bottom = 14.0
+text = "#competitor"
+
+[node name="sc_comp" type="ScrollContainer" parent="vbox"]
+margin_top = 18.0
+margin_right = 1010.0
+margin_bottom = 50.0
+follow_focus = true
+scroll_vertical_enabled = false
+
+[node name="comp" type="HBoxContainer" parent="vbox/sc_comp"]
+margin_bottom = 32.0
+rect_min_size = Vector2( 0, 32 )
+custom_constants/separation = 16
+
+[node name="sc_headtail" type="ScrollContainer" parent="vbox"]
+margin_top = 54.0
+margin_right = 1010.0
+margin_bottom = 54.0
+follow_focus = true
+scroll_vertical_enabled = false
+
+[node name="headtail" type="HBoxContainer" parent="vbox/sc_headtail"]
+custom_constants/separation = 16

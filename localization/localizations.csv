@@ -1,0 +1,15 @@
+keys,en,th
+#start,Start,เริ่มเกม
+##bot_names,,เก่ง พุ ปูนภาน ไอนี่ เลย โต้ แดน เมย์ มาตร เร้น ชิว จู ก้อย เต้ย โท นิด ไผ่ ป่าน กร เนต์ มิ้ง กุล มิว แจน แยม มุก โมมี กิ้ว
+#competitor,Competitor,ผู้เข้าแข่งขัน
+#eliminated_players,Eliminated Players,ผู้เล่นที่ตกรอบ
+#eliminated,Eliminated,ตกรอบ
+#ok,OK,ตกลง
+#head,Head,หัว
+#tail,Tail,ท้าย
+#player,Player Name,ชื่อผู้เล่น
+#round_end,Round End!,จบรอบ!
+#nround,Round %d,รอบทีี %d
+#Rsleepybox_name,Sleepy Box,โผล่วัดใจ
+#Rsleepybox_desc,Whoever appears first or last from the box will be eliminated.,ใครโผล่ขึ้นมาจากกล่องเป็นคนแรกหรือคนสุดท้าย จะตกรอบ
+#Rsleepybox_exit_box,Exit Box,ออกจากกล่อง

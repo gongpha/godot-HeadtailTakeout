@@ -1,0 +1,287 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scene/control/game_root.gd" type="Script" id=1]
+[ext_resource path="res://scene/control/player_list.tscn" type="PackedScene" id=2]
+[ext_resource path="res://resource/deftheme.tres" type="Theme" id=3]
+[ext_resource path="res://resource/font/head_font.tres" type="DynamicFont" id=4]
+[ext_resource path="res://resource/font/reg_font.tres" type="DynamicFont" id=5]
+[ext_resource path="res://scene/control/prefab/player_profile_box.tscn" type="PackedScene" id=6]
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("vbox/list:anchor_top")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("centerboard:rect_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("vbox/space:size_flags_stretch_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("fade:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("fade:color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0.501961 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "hide_round_topic"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("centerboard:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 0.307786, 0.203063 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("fade:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("fade:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0.501961 ), Color( 0, 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "show_competitor_n_hide"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("vbox/space:size_flags_stretch_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 20.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "show_round_topic"
+tracks/0/type = "value"
+tracks/0/path = NodePath("centerboard:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 0.203063, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("fade:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("fade:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0.501961 ) ]
+}
+
+[node name="root" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 3 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fade" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.501961 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="centerboard" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_scale = Vector2( 1e-05, 1e-05 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="vbox" type="VBoxContainer" parent="centerboard"]
+margin_left = 240.0
+margin_top = 133.0
+margin_right = 783.0
+margin_bottom = 466.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="round_text" type="Label" parent="centerboard/vbox"]
+margin_right = 543.0
+margin_bottom = 98.0
+custom_fonts/font = ExtResource( 4 )
+text = "@@@ROUNDNUM"
+
+[node name="panel_con" type="PanelContainer" parent="centerboard/vbox"]
+margin_top = 102.0
+margin_right = 543.0
+margin_bottom = 333.0
+
+[node name="vbox" type="VBoxContainer" parent="centerboard/vbox/panel_con"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 536.0
+margin_bottom = 224.0
+
+[node name="vbox_e" type="VBoxContainer" parent="centerboard/vbox/panel_con/vbox"]
+margin_right = 529.0
+margin_bottom = 125.0
+
+[node name="label" type="Label" parent="centerboard/vbox/panel_con/vbox/vbox_e"]
+margin_right = 529.0
+margin_bottom = 25.0
+text = "#eliminated_players"
+
+[node name="head" parent="centerboard/vbox/panel_con/vbox/vbox_e" instance=ExtResource( 6 )]
+margin_top = 29.0
+margin_right = 529.0
+margin_bottom = 75.0
+board = true
+
+[node name="tail" parent="centerboard/vbox/panel_con/vbox/vbox_e" instance=ExtResource( 6 )]
+margin_top = 79.0
+margin_right = 529.0
+margin_bottom = 125.0
+board = true
+
+[node name="round_desc" type="Label" parent="centerboard/vbox/panel_con/vbox"]
+margin_top = 129.0
+margin_right = 529.0
+margin_bottom = 182.0
+custom_fonts/font = ExtResource( 5 )
+text = "@@@ROUND_DESC
+"
+
+[node name="confirm" type="Button" parent="centerboard/vbox/panel_con/vbox"]
+margin_left = 243.0
+margin_top = 186.0
+margin_right = 286.0
+margin_bottom = 217.0
+size_flags_horizontal = 4
+text = "#ok"
+
+[node name="vbox" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="space" type="Control" parent="vbox"]
+margin_right = 1024.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="list" parent="vbox" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 4.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ani" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 2 )
+anims/hide_round_topic = SubResource( 4 )
+anims/show_competitor_n_hide = SubResource( 1 )
+anims/show_round_topic = SubResource( 3 )
+
+[connection signal="pressed" from="centerboard/vbox/panel_con/vbox/confirm" to="." method="_on_confirm_pressed"]
