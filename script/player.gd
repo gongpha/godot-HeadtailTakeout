@@ -9,7 +9,9 @@ enum Type {
 }
 
 var name := "@@@" # placeholder
-var icon : Texture # any image or other texture
+var icon_bg : Texture # the base icon (circle)
+var icon_fg : Texture # face
+var icon_hue : float # more variation
 var type : int = Type.BOT # start as bot
 var eliminated := false # fail yet
 var eliminated_being_head := true # fail because being head ?

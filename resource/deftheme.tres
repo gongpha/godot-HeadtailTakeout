@@ -1,6 +1,280 @@
-[gd_resource type="Theme" load_steps=2 format=2]
+[gd_resource type="Theme" load_steps=27 format=2]
 
 [ext_resource path="res://resource/font/reg_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://resource/texture/image/ui1.png" type="Texture" id=2]
+
+[sub_resource type="StyleBoxTexture" id=25]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 2.0
+content_margin_bottom = 2.0
+texture = ExtResource( 2 )
+region_rect = Rect2( 128, 0, 128, 128 )
+margin_left = 32.0
+margin_right = 32.0
+margin_top = 96.0
+margin_bottom = 96.0
+modulate_color = Color( 0.443137, 0.443137, 0.443137, 1 )
+
+[sub_resource type="StyleBoxFlat" id=26]
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 1, 0.890196, 0, 0.501961 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxTexture" id=27]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 2.0
+content_margin_bottom = 2.0
+texture = ExtResource( 2 )
+region_rect = Rect2( 128, 0, 128, 128 )
+margin_left = 32.0
+margin_right = 32.0
+margin_top = 96.0
+margin_bottom = 96.0
+modulate_color = Color( 0.756863, 0.756863, 0.756863, 1 )
+
+[sub_resource type="StyleBoxTexture" id=28]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 2.0
+content_margin_bottom = 2.0
+texture = ExtResource( 2 )
+region_rect = Rect2( 128, 0, 128, 128 )
+margin_left = 32.0
+margin_right = 32.0
+margin_top = 96.0
+margin_bottom = 96.0
+modulate_color = Color( 0.588235, 0.588235, 0.588235, 1 )
+
+[sub_resource type="ImageTexture" id=1]
+
+[sub_resource type="Image" id=29]
+data = {
+"data": PoolByteArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 1, 255, 255, 255, 39, 255, 255, 255, 67, 255, 255, 255, 67, 255, 255, 255, 39, 255, 255, 255, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 39, 255, 255, 255, 75, 255, 255, 255, 75, 255, 255, 255, 75, 255, 255, 255, 75, 255, 255, 255, 39, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 66, 255, 255, 255, 75, 255, 255, 255, 75, 255, 255, 255, 75, 255, 255, 255, 75, 255, 255, 255, 66, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 66, 255, 255, 255, 75, 255, 255, 255, 75, 255, 255, 255, 75, 255, 255, 255, 75, 255, 255, 255, 66, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 39, 255, 255, 255, 75, 255, 255, 255, 75, 255, 255, 255, 75, 255, 255, 255, 75, 255, 255, 255, 39, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 1, 255, 255, 255, 39, 255, 255, 255, 67, 255, 255, 255, 67, 255, 255, 255, 39, 255, 255, 255, 1, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ),
+"format": "RGBA8",
+"height": 12,
+"mipmaps": false,
+"width": 12
+}
+
+[sub_resource type="ImageTexture" id=3]
+flags = 0
+flags = 0
+image = SubResource( 29 )
+size = Vector2( 12, 12 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+content_margin_left = 2.0
+content_margin_right = 2.0
+content_margin_top = 2.0
+content_margin_bottom = 2.0
+texture = SubResource( 3 )
+region_rect = Rect2( 0, 0, 12, 12 )
+margin_left = 6.0
+margin_right = 6.0
+margin_top = 6.0
+margin_bottom = 6.0
+
+[sub_resource type="Image" id=30]
+data = {
+"data": PoolByteArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 191, 191, 191, 0, 247, 247, 247, 0, 248, 248, 248, 0, 248, 248, 248, 0, 247, 247, 247, 0, 191, 191, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 191, 191, 191, 0, 191, 191, 191, 4, 247, 247, 247, 98, 248, 248, 248, 167, 248, 248, 248, 167, 247, 247, 247, 98, 191, 191, 191, 4, 191, 191, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 247, 247, 247, 0, 247, 247, 247, 97, 248, 248, 248, 186, 248, 248, 248, 186, 248, 248, 248, 186, 248, 248, 248, 186, 247, 247, 247, 97, 247, 247, 247, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 248, 248, 248, 0, 248, 248, 248, 164, 248, 248, 248, 186, 248, 248, 248, 186, 248, 248, 248, 186, 248, 248, 248, 186, 248, 248, 248, 164, 248, 248, 248, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 248, 248, 248, 0, 248, 248, 248, 164, 248, 248, 248, 186, 248, 248, 248, 186, 248, 248, 248, 186, 248, 248, 248, 186, 248, 248, 248, 164, 248, 248, 248, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 247, 247, 247, 0, 247, 247, 247, 97, 248, 248, 248, 186, 248, 248, 248, 186, 248, 248, 248, 186, 248, 248, 248, 186, 247, 247, 247, 97, 247, 247, 247, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 191, 191, 191, 0, 191, 191, 191, 4, 247, 247, 247, 98, 248, 248, 248, 167, 248, 248, 248, 167, 247, 247, 247, 98, 191, 191, 191, 4, 191, 191, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 191, 191, 191, 0, 247, 247, 247, 0, 248, 248, 248, 0, 248, 248, 248, 0, 247, 247, 247, 0, 191, 191, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ),
+"format": "RGBA8",
+"height": 12,
+"mipmaps": false,
+"width": 12
+}
+
+[sub_resource type="ImageTexture" id=6]
+flags = 0
+flags = 0
+image = SubResource( 30 )
+size = Vector2( 12, 12 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+content_margin_left = 2.0
+content_margin_right = 2.0
+content_margin_top = 2.0
+content_margin_bottom = 2.0
+texture = SubResource( 6 )
+region_rect = Rect2( 0, 0, 12, 12 )
+margin_left = 5.0
+margin_right = 5.0
+margin_top = 5.0
+margin_bottom = 5.0
+
+[sub_resource type="Image" id=31]
+data = {
+"data": PoolByteArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 127, 127, 127, 0, 173, 173, 173, 0, 173, 173, 173, 0, 173, 173, 173, 0, 173, 173, 173, 0, 127, 127, 127, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 127, 127, 127, 0, 127, 127, 127, 4, 173, 173, 173, 97, 173, 173, 173, 166, 173, 173, 173, 166, 173, 173, 173, 97, 127, 127, 127, 4, 127, 127, 127, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 172, 172, 172, 0, 172, 172, 172, 96, 173, 173, 173, 185, 173, 173, 173, 185, 173, 173, 173, 185, 173, 173, 173, 185, 172, 172, 172, 96, 172, 172, 172, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 173, 173, 173, 0, 173, 173, 173, 163, 173, 173, 173, 185, 173, 173, 173, 185, 173, 173, 173, 185, 173, 173, 173, 185, 173, 173, 173, 163, 173, 173, 173, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 173, 173, 173, 0, 173, 173, 173, 163, 173, 173, 173, 185, 173, 173, 173, 185, 173, 173, 173, 185, 173, 173, 173, 185, 173, 173, 173, 163, 173, 173, 173, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 172, 172, 172, 0, 172, 172, 172, 96, 173, 173, 173, 185, 173, 173, 173, 185, 173, 173, 173, 185, 173, 173, 173, 185, 172, 172, 172, 96, 172, 172, 172, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 127, 127, 127, 0, 127, 127, 127, 4, 173, 173, 173, 97, 173, 173, 173, 166, 173, 173, 173, 166, 173, 173, 173, 97, 127, 127, 127, 4, 127, 127, 127, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 127, 127, 127, 0, 173, 173, 173, 0, 173, 173, 173, 0, 173, 173, 173, 0, 173, 173, 173, 0, 127, 127, 127, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ),
+"format": "RGBA8",
+"height": 12,
+"mipmaps": false,
+"width": 12
+}
+
+[sub_resource type="ImageTexture" id=9]
+flags = 0
+flags = 0
+image = SubResource( 31 )
+size = Vector2( 12, 12 )
+
+[sub_resource type="StyleBoxTexture" id=10]
+content_margin_left = 2.0
+content_margin_right = 2.0
+content_margin_top = 2.0
+content_margin_bottom = 2.0
+texture = SubResource( 9 )
+region_rect = Rect2( 0, 0, 12, 12 )
+margin_left = 6.0
+margin_right = 6.0
+margin_top = 6.0
+margin_bottom = 6.0
+
+[sub_resource type="Image" id=32]
+data = {
+"data": PoolByteArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 4, 255, 255, 255, 16, 255, 255, 255, 16, 255, 255, 255, 4, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 16, 255, 255, 255, 21, 255, 255, 255, 21, 255, 255, 255, 16, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 16, 255, 255, 255, 21, 255, 255, 255, 21, 255, 255, 255, 16, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 4, 255, 255, 255, 16, 255, 255, 255, 16, 255, 255, 255, 4, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ),
+"format": "RGBA8",
+"height": 12,
+"mipmaps": false,
+"width": 12
+}
+
+[sub_resource type="ImageTexture" id=12]
+flags = 0
+flags = 0
+image = SubResource( 32 )
+size = Vector2( 12, 12 )
+
+[sub_resource type="StyleBoxTexture" id=13]
+content_margin_left = 0.0
+content_margin_right = 0.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
+texture = SubResource( 12 )
+region_rect = Rect2( 0, 0, 12, 12 )
+margin_left = 5.0
+margin_right = 5.0
+margin_top = 5.0
+margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id=14]
+content_margin_left = 0.0
+content_margin_right = 0.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
+texture = SubResource( 12 )
+region_rect = Rect2( 0, 0, 12, 12 )
+margin_left = 5.0
+margin_right = 5.0
+margin_top = 5.0
+margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id=24]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+texture = ExtResource( 2 )
+region_rect = Rect2( 128, 0, 128, 128 )
+margin_left = 32.0
+margin_right = 32.0
+margin_top = 32.0
+margin_bottom = 30.5772
+
+[sub_resource type="StyleBoxTexture" id=15]
+content_margin_left = 2.0
+content_margin_right = 2.0
+content_margin_top = 2.0
+content_margin_bottom = 2.0
+texture = SubResource( 3 )
+region_rect = Rect2( 0, 0, 12, 12 )
+margin_left = 6.0
+margin_right = 6.0
+margin_top = 6.0
+margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id=16]
+content_margin_left = 2.0
+content_margin_right = 2.0
+content_margin_top = 2.0
+content_margin_bottom = 2.0
+texture = SubResource( 6 )
+region_rect = Rect2( 0, 0, 12, 12 )
+margin_left = 5.0
+margin_right = 5.0
+margin_top = 5.0
+margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id=17]
+content_margin_left = 2.0
+content_margin_right = 2.0
+content_margin_top = 2.0
+content_margin_bottom = 2.0
+texture = SubResource( 9 )
+region_rect = Rect2( 0, 0, 12, 12 )
+margin_left = 6.0
+margin_right = 6.0
+margin_top = 6.0
+margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id=18]
+content_margin_left = 0.0
+content_margin_right = 0.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
+texture = SubResource( 12 )
+region_rect = Rect2( 0, 0, 12, 12 )
+margin_left = 5.0
+margin_right = 5.0
+margin_top = 5.0
+margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id=19]
+content_margin_left = 0.0
+content_margin_right = 0.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
+texture = SubResource( 12 )
+region_rect = Rect2( 0, 0, 12, 12 )
+margin_left = 5.0
+margin_right = 5.0
+margin_top = 5.0
+margin_bottom = 5.0
 
 [resource]
 default_font = ExtResource( 1 )
+Button/styles/disabled = SubResource( 25 )
+Button/styles/focus = SubResource( 26 )
+Button/styles/hover = SubResource( 27 )
+Button/styles/normal = SubResource( 28 )
+Button/styles/pressed = SubResource( 25 )
+HScrollBar/icons/decrement = SubResource( 1 )
+HScrollBar/icons/decrement_highlight = SubResource( 1 )
+HScrollBar/icons/decrement_pressed = SubResource( 1 )
+HScrollBar/icons/increment = SubResource( 1 )
+HScrollBar/icons/increment_highlight = SubResource( 1 )
+HScrollBar/icons/increment_pressed = SubResource( 1 )
+HScrollBar/styles/grabber = SubResource( 4 )
+HScrollBar/styles/grabber_highlight = SubResource( 7 )
+HScrollBar/styles/grabber_pressed = SubResource( 10 )
+HScrollBar/styles/scroll = SubResource( 13 )
+HScrollBar/styles/scroll_focus = SubResource( 14 )
+PanelContainer/styles/panel = SubResource( 24 )
+VScrollBar/icons/decrement = SubResource( 1 )
+VScrollBar/icons/decrement_highlight = SubResource( 1 )
+VScrollBar/icons/decrement_pressed = SubResource( 1 )
+VScrollBar/icons/increment = SubResource( 1 )
+VScrollBar/icons/increment_highlight = SubResource( 1 )
+VScrollBar/icons/increment_pressed = SubResource( 1 )
+VScrollBar/styles/grabber = SubResource( 15 )
+VScrollBar/styles/grabber_highlight = SubResource( 16 )
+VScrollBar/styles/grabber_pressed = SubResource( 17 )
+VScrollBar/styles/scroll = SubResource( 18 )
+VScrollBar/styles/scroll_focus = SubResource( 19 )

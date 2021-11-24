@@ -1,30 +1,60 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scene/control/player_list.gd" type="Script" id=1]
+[ext_resource path="res://resource/texture/image/ui1.png" type="Texture" id=2]
+
+[sub_resource type="StyleBoxTexture" id=24]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 128, 128 )
+margin_left = 32.0
+margin_right = 32.0
+margin_top = 32.0
+margin_bottom = 30.5772
 
 [node name="list" type="PanelContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+custom_styles/panel = SubResource( 24 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="vbox" type="VBoxContainer" parent="."]
-margin_left = 7.0
-margin_top = 273.0
-margin_right = 1017.0
-margin_bottom = 327.0
+margin_left = 8.0
+margin_top = 357.0
+margin_right = 1358.0
+margin_bottom = 411.0
 size_flags_vertical = 4
 
-[node name="label" type="Label" parent="vbox"]
-margin_right = 1010.0
+[node name="hbox" type="HBoxContainer" parent="vbox"]
+margin_right = 1350.0
+margin_bottom = 14.0
+
+[node name="label" type="Label" parent="vbox/hbox"]
+margin_right = 80.0
 margin_bottom = 14.0
 text = "#competitor"
 
+[node name="space" type="Control" parent="vbox/hbox"]
+margin_left = 84.0
+margin_right = 1310.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+
+[node name="status" type="Label" parent="vbox/hbox"]
+margin_left = 1314.0
+margin_right = 1350.0
+margin_bottom = 14.0
+text = "@@@"
+
 [node name="sc_comp" type="ScrollContainer" parent="vbox"]
 margin_top = 18.0
-margin_right = 1010.0
+margin_right = 1350.0
 margin_bottom = 50.0
 follow_focus = true
 scroll_vertical_enabled = false
@@ -36,7 +66,7 @@ custom_constants/separation = 16
 
 [node name="sc_headtail" type="ScrollContainer" parent="vbox"]
 margin_top = 54.0
-margin_right = 1010.0
+margin_right = 1350.0
 margin_bottom = 54.0
 follow_focus = true
 scroll_vertical_enabled = false

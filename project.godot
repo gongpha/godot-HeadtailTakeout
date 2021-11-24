@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "TextureRect",
+"class": "CharacterControl",
+"language": "GDScript",
+"path": "res://scene/control/character_control.gd"
+}, {
 "base": "Control",
 "class": "GameRoot",
 "language": "GDScript",
@@ -54,10 +59,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scene/control/player_list.gd"
 }, {
-"base": "Control",
+"base": "TextureRect",
 "class": "PlayerProfileBox",
 "language": "GDScript",
 "path": "res://scene/control/prefab/player_profile_box.gd"
+}, {
+"base": "RoundStage",
+"class": "RoundChooseANumber",
+"language": "GDScript",
+"path": "res://scene/round/choose_a_number.gd"
+}, {
+"base": "Control",
+"class": "RoundChooseANumberPlayer",
+"language": "GDScript",
+"path": "res://scene/round/choose_a_number_player.gd"
 }, {
 "base": "RoundStage",
 "class": "RoundSleepyBox",
@@ -75,6 +90,7 @@ _global_script_classes=[ {
 "path": "res://scene/round/roundstage.gd"
 } ]
 _global_script_class_icons={
+"CharacterControl": "",
 "GameRoot": "",
 "LocalizationData": "",
 "LocalizationKeys": "",
@@ -85,6 +101,8 @@ _global_script_class_icons={
 "Player": "",
 "PlayerList": "",
 "PlayerProfileBox": "",
+"RoundChooseANumber": "",
+"RoundChooseANumberPlayer": "",
 "RoundSleepyBox": "",
 "RoundSleepyBoxBox": "",
 "RoundStage": ""
@@ -99,6 +117,15 @@ config/icon="res://icon.png"
 [autoload]
 
 GameMaster="*res://script/game_master.gd"
+
+[display]
+
+window/size/width=1366
+window/size/height=768
+
+[editor]
+
+convert_text_resources_to_binary_on_export=true
 
 [editor_plugins]
 

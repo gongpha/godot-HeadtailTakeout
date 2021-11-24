@@ -8,8 +8,8 @@ onready var round_text := $centerboard/vbox/round_text as Label
 onready var round_desc := $centerboard/vbox/panel_con/vbox/round_desc as Label
 
 onready var vbox_e := $centerboard/vbox/panel_con/vbox/vbox_e as VBoxContainer
-onready var head_el_box := $centerboard/vbox/panel_con/vbox/vbox_e/head as PlayerProfileBox
-onready var tail_el_box := $centerboard/vbox/panel_con/vbox/vbox_e/tail as PlayerProfileBox
+onready var head_el_box := $centerboard/vbox/panel_con/vbox/vbox_e/hbox/head as PlayerProfileBox
+onready var tail_el_box := $centerboard/vbox/panel_con/vbox/vbox_e/hbox/tail as PlayerProfileBox
 
 #var round_ : RoundStage
 var confirm_end_round : bool = false # TRUE if confirm button pressing will go next round

@@ -14,7 +14,7 @@ var ui_ready := false # TRUE when animation playing finished
 var button_list := []
 
 const NUMLIST := [
-	6, 8, 10, 12, 14, 16, 18, 20, 22, 24
+	6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32
 ]
 
 func _ready() :
@@ -68,8 +68,8 @@ func go_play() :
 
 # CHANGE LANG BUTTONNNNNNNNNNNNNN
 
-func _on_lang_en_pressed():
+func _on_lang_en_pressed() :
 	TranslationServer.set_locale("en")
 
-func _on_lang_th_pressed():
+func _on_lang_th_pressed() :
 	TranslationServer.set_locale("th")

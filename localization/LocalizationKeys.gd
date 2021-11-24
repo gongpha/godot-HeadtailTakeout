@@ -14,9 +14,18 @@ const #tail = "#tail"
 const #player = "#player"
 const #round_end = "#round_end"
 const #nround = "#nround"
+const #status_passed = "#status_passed"
+const #status_eliminated_head = "#status_eliminated_head"
+const #status_eliminated_tail = "#status_eliminated_tail"
+const #status_eliminated = "#status_eliminated"
 const #Rsleepybox_name = "#Rsleepybox_name"
+const #Rsleepybox_status = "#Rsleepybox_status"
 const #Rsleepybox_desc = "#Rsleepybox_desc"
-const #Rsleepybox_exit_box = "#Rsleepybox_exit_box"
+const #Rchooseanum_label1 = "#Rchooseanum_label1"
+const #Rchooseanum_label2 = "#Rchooseanum_label2"
+const #Rchooseanum_name = "#Rchooseanum_name"
+const #Rchooseanum_desc = "#Rchooseanum_desc"
+const #Rchooseanum_confirm = "#Rchooseanum_confirm"
 
 const KEYS = [
  "#start",
@@ -30,7 +39,16 @@ const KEYS = [
  "#player",
  "#round_end",
  "#nround",
+ "#status_passed",
+ "#status_eliminated_head",
+ "#status_eliminated_tail",
+ "#status_eliminated",
  "#Rsleepybox_name",
+ "#Rsleepybox_status",
  "#Rsleepybox_desc",
- "#Rsleepybox_exit_box"
+ "#Rchooseanum_label1",
+ "#Rchooseanum_label2",
+ "#Rchooseanum_name",
+ "#Rchooseanum_desc",
+ "#Rchooseanum_confirm"
 ]

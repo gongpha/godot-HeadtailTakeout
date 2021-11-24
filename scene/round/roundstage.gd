@@ -1,6 +1,7 @@
 extends Control
 class_name RoundStage
 
+# HUAJAI OF GAME
 # round stage is heart of the game round
 # all gameplay or activity is here
 
@@ -25,8 +26,22 @@ func _get_head() -> int :
 func _get_tail() -> int :
 	return -1
 	
+# can player update the board data ?
 func _can_player_update_board() -> bool :
 	return true
+	
+# get status of player. R U PASSING SON
+func _get_status_of_player() -> String :
+	if GameMaster.player_current.eliminated : # if player failed
+		return "#status_eliminated"
+	if GameMaster.player_id in GameMaster.players_comp : # if player playing
+		if GameMaster.current_round._get_head() == GameMaster.player_id :
+			return "#status_eliminated_head"
+		elif GameMaster.current_round._get_tail() == GameMaster.player_id :
+			return "#status_eliminated_tail"
+		elif GameMaster.player_id in GameMaster.players_board :
+			return "#status_passed"
+	return ""
 	
 func _put_player_to_board(id : int) :
 	# find pos (Sort)

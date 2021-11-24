@@ -6,7 +6,26 @@ var lobbyinput_bot_count : int = 10
 var lobbyinput_name : String
 
 var default_round_scenes := [
-	preload("res://scene/round/sleepy_box.tscn")
+	#preload("res://scene/round/sleepy_box.tscn")
+	preload("res://scene/round/choose_a_number.tscn")
+]
+
+var default_character_faces := [
+	preload("res://resource/texture/charac/char1.atlastex"),
+	preload("res://resource/texture/charac/char2.atlastex"),
+	preload("res://resource/texture/charac/char3.atlastex"),
+	preload("res://resource/texture/charac/char4.atlastex"),
+	preload("res://resource/texture/charac/char5.atlastex"),
+	preload("res://resource/texture/charac/char6.atlastex"),
+	preload("res://resource/texture/charac/char7.atlastex"),
+	preload("res://resource/texture/charac/char8.atlastex")
+]
+
+var default_character_circles := [
+	preload("res://resource/texture/charac/char_cir1.atlastex"),
+	preload("res://resource/texture/charac/char_cir2.atlastex"),
+	preload("res://resource/texture/charac/char_cir3.atlastex"),
+	preload("res://resource/texture/charac/char_cir4.atlastex")
 ]
 
 # IN GAME
@@ -21,12 +40,21 @@ signal board_updated()
 signal changed_round()
 signal round_end()
 
+func _generate_player() -> Player :
+	var player := Player.new()
+	# random player icon
+	player.icon_bg = default_character_circles[randi() % default_character_circles.size()]
+	player.icon_fg = default_character_faces[randi() % default_character_faces.size()]
+	player.icon_hue = randf()
+	
+	return player
+
 func start_game() :
 	# START GAMEEEEEEEEEEEEEEEEEEEEEE (^O^)
 	randomize() # random seed
 	
 	# add self
-	player_current = Player.new()
+	player_current = _generate_player()
 	player_current.name = lobbyinput_name
 	player_current.type = Player.Type.PLAYER
 	players.append(player_current)
@@ -48,7 +76,7 @@ func start_game() :
 	# generate bots by count
 	# NAMES are UNIQUE DUDE
 	for i in range(lobbyinput_bot_count) :
-		var player := Player.new()
+		var player := _generate_player()
 		if not names.empty() :
 			var choosen := randi() % names.size() # random choose
 			player.name = names[choosen]
@@ -79,6 +107,13 @@ func prepare_round() :
 	if current_round :
 		current_round.free() # delete round
 		current_round = null
+		
+	for i in GameMaster.players_board :
+		var p : Player = GameMaster.players[i]
+		p.data = null
+		
+	GameMaster.players_board.clear()
+		
 	# random and instance
 	var choosed_round := default_round_scenes[randi() % default_round_scenes.size()].instance() as RoundStage
 	
@@ -99,17 +134,11 @@ func end_round() :
 	current_round.started = false
 	current_round.stop()
 	
-	for i in GameMaster.players_board :
-		var p : Player = GameMaster.players[i]
-		p.data = null
-	
-	GameMaster.players_board.clear()
-	
 	# REMOVE THAT FAILED PLAYERS HAHAHAHAAHAHHA
 	var head_i : int = current_round._get_head()
 	var tail_i : int = current_round._get_tail()
-	var head_p : Player = players[current_round._get_head()]
-	var tail_p : Player = players[current_round._get_tail()]
+	var head_p : Player = players[head_i]
+	var tail_p : Player = players[tail_i]
 	head_p.eliminated = true
 	tail_p.eliminated = true
 	tail_p.eliminated_being_head = false

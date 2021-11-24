@@ -49,17 +49,17 @@ __meta__ = {
 [node name="center" type="CenterContainer" parent="margin"]
 margin_left = 25.0
 margin_top = 25.0
-margin_right = 999.0
-margin_bottom = 575.0
+margin_right = 1341.0
+margin_bottom = 743.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="vbox" type="VBoxContainer" parent="margin/center"]
-margin_left = 446.0
-margin_top = 238.0
-margin_right = 528.0
-margin_bottom = 312.0
+margin_left = 617.0
+margin_top = 323.0
+margin_right = 699.0
+margin_bottom = 395.0
 grow_horizontal = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -79,25 +79,25 @@ margin_bottom = 39.0
 [node name="start" type="Button" parent="margin/center/vbox"]
 margin_top = 43.0
 margin_right = 82.0
-margin_bottom = 74.0
+margin_bottom = 72.0
 text = "#start"
 
 [node name="hbox" type="HBoxContainer" parent="margin"]
 margin_left = 25.0
 margin_top = 25.0
-margin_right = 999.0
+margin_right = 1341.0
 margin_bottom = 61.0
 size_flags_vertical = 0
 
 [node name="space" type="Control" parent="margin/hbox"]
-margin_right = 854.0
+margin_right = 1196.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 
 [node name="minisettings" type="HBoxContainer" parent="margin/hbox"]
-margin_left = 858.0
-margin_right = 974.0
+margin_left = 1200.0
+margin_right = 1316.0
 margin_bottom = 36.0
 grow_horizontal = 0
 size_flags_horizontal = 0
