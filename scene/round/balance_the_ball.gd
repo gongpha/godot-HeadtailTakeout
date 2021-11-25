@@ -1,9 +1,9 @@
 extends RoundStage
-class_name RoundChooseANumber
+class_name RoundBalanceTheBall
 
-# ChooseANumber by kongfa waroros
-# Choose a number. Dont Greater or least than other
-# if someone same with someone. round restarts
+# BalanceTheBall by kongfa waroros
+# Keep pressing a button to push the ball.
+# KEEP BALANCE AS POSSIBLE (use float)
 
 onready var vbox_play := $center/vbox
 onready var label := $center/vbox/label

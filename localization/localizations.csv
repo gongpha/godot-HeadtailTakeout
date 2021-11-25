@@ -1,6 +1,6 @@
 keys,en,th
 #start,Start,เริ่มเกม
-##bot_names,,เก่ง เต้ กล้า เนย ปู ก้ามปู แอง เชอร์ ติว วาว พุ ปูนภาน ไอนี่ เลย โต้ แดน เมย์ มาตร เร้น ชิว จู ก้อย เต้ย โท นิด ไผ่ ป่าน กร เนต์ มิ้ง กุล มิว แจน แยม มุก โมมี กิ้ว แทน ยู บีน นิค อะตอม ภูมิ อาร์ม การ์ตูน ภู ต่อ เคน บอส ปั้น ข้าวปั้น แตงโม เบนซ์ บอล เฟิร์ส มิก ธีร์ ปลื้ม ต้า บูม เบียร์ ทัน โอม นิคกี้ เล็ก หญิง หน่อย เหมี่ยว เหมียว ซัน อุ้ม นาย ไนน์ แบม แบมบู เอย แต๋ว ถาย หมู แพรว ป๊อปอาย หม่อน เอิร์ธ ปราบ พลับ ปอ ต้น หนาว ปอนด์ บอสตัน ต๊ะ ฟลุ๊ค มิ้ม โม
+##bot_names,,เก่ง เต้ กล้า เนย ปู ก้ามปู แอง เชอร์ ติว วาว พุ ปูนภาน ไอนี่ เลย โต้ แดน เมย์ มาตร เร้น ชิว จู ก้อย เต้ย โท นิด ไผ่ ป่าน กร เนต์ มิ้ง กุล มิว แจน แยม มุก โมมี กิ้ว แทน ยู บีน นิค อะตอม ภูมิ อาร์ม การ์ตูน ภู ต่อ เคน บอส ปั้น ข้าวปั้น แตงโม เบนซ์ บอล เฟิร์ส มิก ธีร์ ปลื้ม ต้า บูม เบียร์ ทัน โอม นิคกี้ เล็ก หญิง หน่อย เหมี่ยว เหมียว ซัน อุ้ม นาย ไนน์ แบม แบมบู เอย แต๋ว ถาย หมู แพรว ป๊อปอาย หม่อน เอิร์ธ ปราบ พลับ ปอ ต้น หนาว ปอนด์ บอสตัน ต๊ะ ฟลุ๊ค มิ้ม โม บีม เพชร อ้อย มาย มายด์ มีน เฟรม นุ่น แพน แพนด้า ทัญ น้ำ หนึ่ง ต้นน้ำ คอป เทียน ปาล์ม มีมี่ จอย แจ๊ค โจ๊ก ทาม เดีย น้ำขิง น้ำหวาน ออม ออมสิน สิน ทีที ซิน ครีม เพลง ขวัญ ข้าว เฟย์ ฝ้าย ใบตอง แอร์ แบงก์ พี มาร์ก โชกุน หม่อง ทอย ซีน แอนดี้ ดิว ไก่ อินดี้ เน 
 #competitor,Competitor,ผู้เข้าแข่งขัน
 #eliminated_players,Eliminated Players,ผู้เล่นที่ตกรอบ
 #eliminated,Eliminated,ตกรอบ
@@ -17,8 +17,13 @@ keys,en,th
 #Rsleepybox_name,Sleepy Box,โผล่วัดใจ
 #Rsleepybox_status,Try exit the box between the first and last!,พยายามออกจากกล่องระหว่างคนแรกและสุดท้าย!
 #Rsleepybox_desc,Whoever appears first or last from the box will be eliminated.,ใครโผล่ขึ้นมาจากกล่องเป็นคนแรกหรือคนสุดท้าย จะตกรอบ
+#Rsleepybox_exit_box,Exit the box,ออกจากกล่อง
 #Rchooseanum_label1,The number you chosen,เลขที่คุณเลือก
 #Rchooseanum_label2,Enter your number here,เลือกเลขของคุณ
 #Rchooseanum_name,Keep Balance Mind,โลภมาก ลาภหาย
 #Rchooseanum_desc,Randoms one number and compare to other players. Whoever has greatest or least number will be eliminated. ,สุ่มเลขมาหนึ่งจำนวน และเปรียบเทียบกับผู้เล่นอื่น ใครที่มีเลขที่ค่ามากที่สุดและน้อยที่สุด จะตกรอบ
 #Rchooseanum_confirm,Confirm a number,ยืนยันเลขที่เลือก
+#Rchooseanum_status,Choose a number. Try not to give too much and too little.,เลือกเลขของคุณ พยายามอย่าให้มากและน้อยเกินไป
+#Rchooseanum_wait,Wait for judgement,รอการตัดสิน
+#Rchooseanum_duplicate,Some players choose the same numbers as other players. Choose again,มีผู้เล่นบางคนเลือกเลขที่เหมือนกับผู้เล่นอื่น เลือกใหม่อีกครั้ง
+#Rchooseanum_checking,Checking in progress...,การตรวจสอบกำลังดำเนินการ...

@@ -30,9 +30,9 @@ func get_sec_string(sec : int) :
 func update_time_text() :
 	time_node.text = get_sec_string(sec)
 
-func control_raise(from_id : int, pp = null, tt = null) :
+func control_raise(from_id : int) :
 	if my_head == -1 :
-		# YOU ARE HEAD 55555555555555555555555555555555555
+		# YOU ARE HEAD 55555555555555555555555555555555555 becuz u r first
 		my_head = from_id
 	
 	# check if player almost go out
@@ -135,7 +135,7 @@ func start() :
 	sectimer.start()
 	
 	# random how bot will out
-	var median_list := [3]#[15, 30, 45, 60]
+	var median_list := [15, 30, 45, 60]
 	median_list.shuffle()
 	var median_second := median_list[0] as int
 	
@@ -148,9 +148,9 @@ func start() :
 			# if this is bot. Make timer
 			timer = Timer.new()
 			# add more time for reality (+RAND*median) maybe faster or slower
-			timer.wait_time = median_second + (randf() * 2 - 1) * median_second
+			timer.wait_time = max(median_second + (randf() * 2 - 1) * median_second, 5) # more than 5 secs
 			timer.one_shot = true
-			timer.connect("timeout", self, "control_raise", [i, p, timer])
+			timer.connect("timeout", self, "control_raise", [i])
 			add_child(timer)
 			timer.start()
 			

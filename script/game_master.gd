@@ -6,7 +6,7 @@ var lobbyinput_bot_count : int = 10
 var lobbyinput_name : String
 
 var default_round_scenes := [
-	#preload("res://scene/round/sleepy_box.tscn")
+	preload("res://scene/round/sleepy_box.tscn"),
 	preload("res://scene/round/choose_a_number.tscn")
 ]
 

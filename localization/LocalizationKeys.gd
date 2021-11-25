@@ -21,11 +21,16 @@ const #status_eliminated = "#status_eliminated"
 const #Rsleepybox_name = "#Rsleepybox_name"
 const #Rsleepybox_status = "#Rsleepybox_status"
 const #Rsleepybox_desc = "#Rsleepybox_desc"
+const #Rsleepybox_exit_box = "#Rsleepybox_exit_box"
 const #Rchooseanum_label1 = "#Rchooseanum_label1"
 const #Rchooseanum_label2 = "#Rchooseanum_label2"
 const #Rchooseanum_name = "#Rchooseanum_name"
 const #Rchooseanum_desc = "#Rchooseanum_desc"
 const #Rchooseanum_confirm = "#Rchooseanum_confirm"
+const #Rchooseanum_status = "#Rchooseanum_status"
+const #Rchooseanum_wait = "#Rchooseanum_wait"
+const #Rchooseanum_duplicate = "#Rchooseanum_duplicate"
+const #Rchooseanum_checking = "#Rchooseanum_checking"
 
 const KEYS = [
  "#start",
@@ -46,9 +51,14 @@ const KEYS = [
  "#Rsleepybox_name",
  "#Rsleepybox_status",
  "#Rsleepybox_desc",
+ "#Rsleepybox_exit_box",
  "#Rchooseanum_label1",
  "#Rchooseanum_label2",
  "#Rchooseanum_name",
  "#Rchooseanum_desc",
- "#Rchooseanum_confirm"
+ "#Rchooseanum_confirm",
+ "#Rchooseanum_status",
+ "#Rchooseanum_wait",
+ "#Rchooseanum_duplicate",
+ "#Rchooseanum_checking"
 ]

@@ -6,6 +6,7 @@ onready var list := $vbox/list as PlayerList
 onready var centerboard := $centerboard as CenterContainer
 onready var round_text := $centerboard/vbox/round_text as Label
 onready var round_desc := $centerboard/vbox/panel_con/vbox/round_desc as Label
+onready var root_stage := $vbox/root_stage as Control
 
 onready var vbox_e := $centerboard/vbox/panel_con/vbox/vbox_e as VBoxContainer
 onready var head_el_box := $centerboard/vbox/panel_con/vbox/vbox_e/hbox/head as PlayerProfileBox
@@ -30,8 +31,8 @@ func _prepare_round(round_ : RoundStage) :
 	round_desc.show()
 	round_desc.text = round_.description
 	
-	add_child(round_)
-	move_child(round_, 0)
+	root_stage.add_child(round_)
+	root_stage.move_child(round_, 0)
 	
 	list.fetch_comp_list()
 	list.fetch_board_list()

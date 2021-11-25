@@ -28,7 +28,7 @@ __meta__ = {
 
 [node name="margin" type="MarginContainer" parent="."]
 anchor_right = 1.0
-anchor_bottom = 0.8
+anchor_bottom = 1.0
 custom_constants/margin_right = 25
 custom_constants/margin_top = 25
 custom_constants/margin_left = 25
@@ -41,14 +41,14 @@ __meta__ = {
 margin_left = 25.0
 margin_top = 25.0
 margin_right = 1341.0
-margin_bottom = 589.0
+margin_bottom = 743.0
 rect_clip_content = false
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="center" type="CenterContainer" parent="margin/scroll"]
 margin_right = 1316.0
-margin_bottom = 564.0
+margin_bottom = 718.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -57,9 +57,9 @@ __meta__ = {
 
 [node name="boxes" type="GridContainer" parent="margin/scroll/center"]
 margin_left = 658.0
-margin_top = 282.0
+margin_top = 359.0
 margin_right = 658.0
-margin_bottom = 282.0
+margin_bottom = 359.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/vseparation = 32
