@@ -24,13 +24,10 @@ func _init() :
 	round_name = "#Rsleepybox_name"
 	description = "#Rsleepybox_desc"
 	
-func get_sec_string(sec : int) :
-	return "%02d:%02d" % [floor(sec / 60), sec % 60]
-	
 func update_time_text() :
-	time_node.text = get_sec_string(sec)
+	time_node.text = GameMaster.get_sec_string(sec)
 
-func control_raise(from_id : int) :
+func control_raise(from_id : int, last : bool = false) :
 	if my_head == -1 :
 		# YOU ARE HEAD 55555555555555555555555555555555555 becuz u r first
 		my_head = from_id
@@ -43,7 +40,10 @@ func control_raise(from_id : int) :
 	# call to tell this player GET OUT
 	var p : Player = GameMaster.players[from_id]
 	p.data[1] = last_index # SET INDEX DATA
-	p.data[2] = sec
+	if last :
+		p.data[2] = -2
+	else :
+		p.data[2] = sec
 	_put_player_to_board(from_id)
 	last_index += 1
 	
@@ -67,7 +67,7 @@ func control_raise(from_id : int) :
 			if p.data[1] == -1 :
 				# OH YOU ARE. YOU TAIL
 				my_tail = i
-				control_raise(i)
+				control_raise(i, true)
 				GameMaster.end_round()
 				break
 	
@@ -94,7 +94,11 @@ func _get_tail() -> int :
 	
 func _show_data(p : Player) -> String :
 	#var p : Player = GameMaster.players[id]
-	return get_sec_string(p.data[2])
+	var sec_ : int = p.data[2]
+	if sec_ == -2 :
+		return "#Rsleepybox_last_word"
+	else :
+		return GameMaster.get_sec_string(p.data[2])
 
 func _on_exit_box_pressed() :
 	if not started :

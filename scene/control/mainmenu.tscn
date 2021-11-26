@@ -56,30 +56,30 @@ __meta__ = {
 }
 
 [node name="vbox" type="VBoxContainer" parent="margin/center"]
-margin_left = 617.0
-margin_top = 323.0
-margin_right = 699.0
-margin_bottom = 395.0
+margin_left = 614.0
+margin_top = 326.0
+margin_right = 702.0
+margin_bottom = 392.0
 grow_horizontal = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="name_field" type="LineEdit" parent="margin/center/vbox"]
-margin_right = 82.0
-margin_bottom = 35.0
+margin_right = 88.0
+margin_bottom = 29.0
 text = "Player"
 placeholder_text = "#player"
 
 [node name="hbox_count" type="HBoxContainer" parent="margin/center/vbox"]
-margin_top = 39.0
-margin_right = 82.0
-margin_bottom = 39.0
+margin_top = 33.0
+margin_right = 88.0
+margin_bottom = 33.0
 
 [node name="start" type="Button" parent="margin/center/vbox"]
-margin_top = 43.0
-margin_right = 82.0
-margin_bottom = 72.0
+margin_top = 37.0
+margin_right = 88.0
+margin_bottom = 66.0
 text = "#start"
 
 [node name="hbox" type="HBoxContainer" parent="margin"]

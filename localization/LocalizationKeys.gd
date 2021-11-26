@@ -14,6 +14,9 @@ const #tail = "#tail"
 const #player = "#player"
 const #round_end = "#round_end"
 const #nround = "#nround"
+const #list_all = "#list_all"
+const #list_comp = "#list_comp"
+const #list_eli = "#list_eli"
 const #status_passed = "#status_passed"
 const #status_eliminated_head = "#status_eliminated_head"
 const #status_eliminated_tail = "#status_eliminated_tail"
@@ -22,6 +25,7 @@ const #Rsleepybox_name = "#Rsleepybox_name"
 const #Rsleepybox_status = "#Rsleepybox_status"
 const #Rsleepybox_desc = "#Rsleepybox_desc"
 const #Rsleepybox_exit_box = "#Rsleepybox_exit_box"
+const #Rsleepybox_last_word = "#Rsleepybox_last_word"
 const #Rchooseanum_label1 = "#Rchooseanum_label1"
 const #Rchooseanum_label2 = "#Rchooseanum_label2"
 const #Rchooseanum_name = "#Rchooseanum_name"
@@ -31,6 +35,11 @@ const #Rchooseanum_status = "#Rchooseanum_status"
 const #Rchooseanum_wait = "#Rchooseanum_wait"
 const #Rchooseanum_duplicate = "#Rchooseanum_duplicate"
 const #Rchooseanum_checking = "#Rchooseanum_checking"
+const #Rbalancetheball_name = "#Rbalancetheball_name"
+const #Rbalancetheball_desc = "#Rbalancetheball_desc"
+const #Rbalancetheball_status = "#Rbalancetheball_status"
+const #Rbalancetheball_control = "#Rbalancetheball_control"
+const #Rbalancetheball_checking = "#Rbalancetheball_checking"
 
 const KEYS = [
  "#start",
@@ -44,6 +53,9 @@ const KEYS = [
  "#player",
  "#round_end",
  "#nround",
+ "#list_all",
+ "#list_comp",
+ "#list_eli",
  "#status_passed",
  "#status_eliminated_head",
  "#status_eliminated_tail",
@@ -52,6 +64,7 @@ const KEYS = [
  "#Rsleepybox_status",
  "#Rsleepybox_desc",
  "#Rsleepybox_exit_box",
+ "#Rsleepybox_last_word",
  "#Rchooseanum_label1",
  "#Rchooseanum_label2",
  "#Rchooseanum_name",
@@ -60,5 +73,10 @@ const KEYS = [
  "#Rchooseanum_status",
  "#Rchooseanum_wait",
  "#Rchooseanum_duplicate",
- "#Rchooseanum_checking"
+ "#Rchooseanum_checking",
+ "#Rbalancetheball_name",
+ "#Rbalancetheball_desc",
+ "#Rbalancetheball_status",
+ "#Rbalancetheball_control",
+ "#Rbalancetheball_checking"
 ]

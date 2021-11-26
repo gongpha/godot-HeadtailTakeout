@@ -30,11 +30,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="vbox" type="VBoxContainer" parent="vbox"]
-margin_right = 1366.0
-margin_bottom = 49.0
-
-[node name="time" type="Label" parent="vbox/vbox"]
+[node name="time" type="Label" parent="vbox"]
 margin_right = 1366.0
 margin_bottom = 49.0
 custom_fonts/font = ExtResource( 3 )
@@ -44,15 +40,39 @@ align = 1
 [node name="scroll" type="ScrollContainer" parent="vbox"]
 margin_top = 53.0
 margin_right = 1366.0
-margin_bottom = 768.0
+margin_bottom = 709.0
 size_flags_vertical = 3
 follow_focus = true
 scroll_horizontal_enabled = false
 
-[node name="vbox_bars" type="VBoxContainer" parent="vbox/scroll"]
+[node name="grid_bars" type="GridContainer" parent="vbox/scroll"]
+margin_right = 1366.0
+margin_bottom = 656.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 3
 
-[node name="anitime" type="Timer" parent="."]
-wait_time = 0.5
+[node name="input" type="Button" parent="vbox"]
+margin_left = 481.0
+margin_top = 713.0
+margin_right = 885.0
+margin_bottom = 768.0
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 3 )
+disabled = true
+text = "#Rbalancetheball_control"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="countdown" type="Timer" parent="."]
 one_shot = true
 
+[node name="anitime" type="Timer" parent="."]
+wait_time = 0.125
+one_shot = true
+
+[connection signal="button_down" from="vbox/input" to="." method="_on_input_button_down"]
+[connection signal="button_up" from="vbox/input" to="." method="_on_input_button_up"]
+[connection signal="timeout" from="countdown" to="." method="_on_countdown_timeout"]
 [connection signal="timeout" from="anitime" to="." method="_on_anitime_timeout"]

@@ -154,9 +154,6 @@ func start() :
 	if not GameMaster.player_current.eliminated :
 		confirm.disabled = false
 		number.editable = true
-		
-	# start cpu timing (for realistic)
-	# THIS IS HOW CPU WORK
 	
 	# random THINK SEC
 	# delay lol
@@ -164,7 +161,7 @@ func start() :
 	for i in GameMaster.players_comp :
 		var p : Player = GameMaster.players[i]
 		
-		var thinksec := rand_range(2, 10)
+		var thinksec := rand_range(1, 10)
 		var timer : Timer
 		var rand : int = -1
 			
@@ -186,7 +183,7 @@ func start() :
 			timer.start()
 			
 		# init data
-		p.data = [timer, rand, 0] # [exit yet, number, state*]
+		p.data = [timer, rand, 0] # [timer, number, state*]
 		# * 0 = think, 1 = finished, 2 = show
 	pass
 

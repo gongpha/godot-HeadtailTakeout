@@ -8,6 +8,10 @@ onready var comp := $vbox/sc_comp/comp # comp list
 onready var board := $vbox/sc_headtail/headtail # board list
 onready var status_text := $vbox/hbox/status # status textfor show your current state
 
+onready var all_label := $vbox/hbox/all
+onready var comp_label := $vbox/hbox/comp
+onready var eli_label := $vbox/hbox/eli
+
 func _ready() :
 	pass
 
@@ -23,6 +27,10 @@ func fetch_comp_list() :
 		box.player = GameMaster.players[i]
 		box.player_id = i
 		comp.add_child(box)
+		
+	all_label.text = tr("#list_all") % GameMaster.players.size()
+	comp_label.text = tr("#list_comp") % GameMaster.players_comp.size()
+	eli_label.text = tr("#list_eli") % (GameMaster.players.size() - GameMaster.players_comp.size())
 		
 func fetch_board_list() :
 	# like above

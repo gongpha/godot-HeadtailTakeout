@@ -11,6 +11,8 @@ onready var name_node : Label = $name
 onready var balloon_node : TextureRect = $balloon
 
 func _ready() :
+	name_node.set_message_translation(false)
+	val_node.set_message_translation(false)
 	sign_node.hide()
 	balloon_node.show()
 	update_data()

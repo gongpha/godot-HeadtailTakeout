@@ -6,6 +6,7 @@ var lobbyinput_bot_count : int = 10
 var lobbyinput_name : String
 
 var default_round_scenes := [
+	preload("res://scene/round/balance_the_ball.tscn"),
 	preload("res://scene/round/sleepy_box.tscn"),
 	preload("res://scene/round/choose_a_number.tscn")
 ]
@@ -35,6 +36,7 @@ var players_board := [] # IN BOARD
 var player_current : Player # my player
 var player_id : int = 0 # player id, normally 0
 var current_round : RoundStage
+var current_round_idx : int = -1
 
 signal board_updated()
 signal changed_round()
@@ -115,7 +117,15 @@ func prepare_round() :
 	GameMaster.players_board.clear()
 		
 	# random and instance
-	var choosed_round := default_round_scenes[randi() % default_round_scenes.size()].instance() as RoundStage
+	# AVOID repeating
+	var choosed_round_idx : int = -1
+	while true :
+		choosed_round_idx = randi() % default_round_scenes.size()
+		if current_round_idx != choosed_round_idx :
+			break
+		
+	current_round_idx = choosed_round_idx
+	var choosed_round := default_round_scenes[choosed_round_idx].instance() as RoundStage
 	
 	current_round = choosed_round
 	call_deferred("emit_signal", "changed_round")
@@ -146,3 +156,6 @@ func end_round() :
 	players_comp.erase(tail_i)
 	
 	emit_signal("round_end")
+
+static func get_sec_string(sec : int) -> String :
+	return "%02d:%02d" % [floor(sec / 60), sec % 60]

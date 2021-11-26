@@ -40,8 +40,43 @@ margin_right = 80.0
 margin_bottom = 14.0
 text = "#competitor"
 
-[node name="space" type="Control" parent="vbox/hbox"]
+[node name="vs1" type="VSeparator" parent="vbox/hbox"]
 margin_left = 84.0
+margin_right = 88.0
+margin_bottom = 14.0
+
+[node name="all" type="Label" parent="vbox/hbox"]
+margin_left = 92.0
+margin_right = 172.0
+margin_bottom = 14.0
+text = "#competitor"
+
+[node name="vs2" type="VSeparator" parent="vbox/hbox"]
+margin_left = 176.0
+margin_right = 180.0
+margin_bottom = 14.0
+
+[node name="comp" type="Label" parent="vbox/hbox"]
+margin_left = 184.0
+margin_right = 264.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0.501961, 1, 0.501961, 1 )
+text = "#competitor"
+
+[node name="vs3" type="VSeparator" parent="vbox/hbox"]
+margin_left = 268.0
+margin_right = 272.0
+margin_bottom = 14.0
+
+[node name="eli" type="Label" parent="vbox/hbox"]
+margin_left = 276.0
+margin_right = 356.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 1, 0.501961, 0.501961, 1 )
+text = "#competitor"
+
+[node name="space" type="Control" parent="vbox/hbox"]
+margin_left = 360.0
 margin_right = 1310.0
 margin_bottom = 14.0
 size_flags_horizontal = 3
