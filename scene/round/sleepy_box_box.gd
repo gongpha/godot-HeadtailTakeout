@@ -1,4 +1,4 @@
-extends TextureRect
+extends Control
 class_name RoundSleepyBoxBox
 
 var player : Player
@@ -10,11 +10,12 @@ var head_tex := preload("res://resource/texture/head_symb.atlastex")
 var tail_tex := preload("res://resource/texture/tail_symb.atlastex")
 var pass_tex := preload("res://resource/texture/pass_symb.atlastex")
 
-onready var label := $label
-onready var sign_node := $sign
-onready var in_node := $sign/in
-onready var character_node := $character
-onready var face_node := $character/face
+onready var box : TextureRect = $box
+onready var label := $box/label
+onready var sign_node := $box/sign
+onready var in_node := $box/sign/in
+onready var character_node := $box/character
+onready var face_node := $box/character/face
 
 func _ready() :
 	sign_node.hide()
@@ -33,12 +34,12 @@ func update_data() :
 		
 		if player.data != null :
 			if player.data[1] == -1 :
-				texture = close_tex
+				box.texture = close_tex
 				sign_node.hide()
 				character_node.hide()
 				face_node.hide()
 			else :
-				texture = open_tex
+				box.texture = open_tex
 				sign_node.show()
 				character_node.texture = player.icon_bg
 				face_node.texture = player.icon_fg

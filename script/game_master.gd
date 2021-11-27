@@ -6,6 +6,7 @@ var lobbyinput_bot_count : int = 10
 var lobbyinput_name : String
 
 var default_round_scenes := [
+	#preload("res://scene/round/winner.tscn"),
 	preload("res://scene/round/balance_the_ball.tscn"),
 	preload("res://scene/round/sleepy_box.tscn"),
 	preload("res://scene/round/choose_a_number.tscn")
@@ -22,11 +23,29 @@ var default_character_faces := [
 	preload("res://resource/texture/charac/char8.atlastex")
 ]
 
+var default_character_faces_happy := [
+	preload("res://resource/texture/charac/char1happy.atlastex"),
+	preload("res://resource/texture/charac/char2happy.atlastex"),
+	preload("res://resource/texture/charac/char3happy.atlastex"),
+	preload("res://resource/texture/charac/char4happy.atlastex"),
+	preload("res://resource/texture/charac/char5happy.atlastex"),
+	preload("res://resource/texture/charac/char6happy.atlastex"),
+	preload("res://resource/texture/charac/char7happy.atlastex"),
+	preload("res://resource/texture/charac/char8happy.atlastex")
+]
+
 var default_character_circles := [
 	preload("res://resource/texture/charac/char_cir1.atlastex"),
 	preload("res://resource/texture/charac/char_cir2.atlastex"),
 	preload("res://resource/texture/charac/char_cir3.atlastex"),
 	preload("res://resource/texture/charac/char_cir4.atlastex")
+]
+
+var default_character_circles_big := [
+	preload("res://resource/texture/charac/char_cirbig1.atlastex"),
+	preload("res://resource/texture/charac/char_cirbig2.atlastex"),
+	preload("res://resource/texture/charac/char_cirbig3.atlastex"),
+	preload("res://resource/texture/charac/char_cirbig4.atlastex")
 ]
 
 # IN GAME
@@ -45,8 +64,12 @@ signal round_end()
 func _generate_player() -> Player :
 	var player := Player.new()
 	# random player icon
-	player.icon_bg = default_character_circles[randi() % default_character_circles.size()]
-	player.icon_fg = default_character_faces[randi() % default_character_faces.size()]
+	var bg_rand := randi() % default_character_circles.size()
+	var fg_rand := randi() % default_character_faces.size()
+	player.icon_bg = default_character_circles[bg_rand]
+	player.icon_fg = default_character_faces[fg_rand]
+	player.icon_bg_win = default_character_circles_big[bg_rand]
+	player.icon_fg_win = default_character_faces_happy[fg_rand]
 	player.icon_hue = randf()
 	
 	return player
@@ -114,18 +137,26 @@ func prepare_round() :
 		var p : Player = GameMaster.players[i]
 		p.data = null
 		
-	GameMaster.players_board.clear()
+	players_board.clear()
+	
+	var next_round_scene : PackedScene
+	
+	# there is one player here ?
+	if players_comp.size() < 2 :
+		next_round_scene = preload("res://scene/round/winner.tscn")
 		
-	# random and instance
-	# AVOID repeating
-	var choosed_round_idx : int = -1
-	while true :
-		choosed_round_idx = randi() % default_round_scenes.size()
-		if current_round_idx != choosed_round_idx :
-			break
-		
-	current_round_idx = choosed_round_idx
-	var choosed_round := default_round_scenes[choosed_round_idx].instance() as RoundStage
+	else :
+		# random and instance
+		# AVOID repeating
+		var choosed_round_idx : int = -1
+		while true :
+			choosed_round_idx = randi() % default_round_scenes.size()
+			if current_round_idx != choosed_round_idx :
+				break
+			
+		current_round_idx = choosed_round_idx
+		next_round_scene = default_round_scenes[choosed_round_idx]
+	var choosed_round := next_round_scene.instance() as RoundStage
 	
 	current_round = choosed_round
 	call_deferred("emit_signal", "changed_round")

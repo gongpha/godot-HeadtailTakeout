@@ -17,6 +17,10 @@ const #nround = "#nround"
 const #list_all = "#list_all"
 const #list_comp = "#list_comp"
 const #list_eli = "#list_eli"
+const #back_to_menu = "#back_to_menu"
+const #winner_header = "#winner_header"
+const #bot_count = "#bot_count"
+const #your_name = "#your_name"
 const #status_passed = "#status_passed"
 const #status_eliminated_head = "#status_eliminated_head"
 const #status_eliminated_tail = "#status_eliminated_tail"
@@ -56,6 +60,10 @@ const KEYS = [
  "#list_all",
  "#list_comp",
  "#list_eli",
+ "#back_to_menu",
+ "#winner_header",
+ "#bot_count",
+ "#your_name",
  "#status_passed",
  "#status_eliminated_head",
  "#status_eliminated_tail",

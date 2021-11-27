@@ -89,7 +89,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scene/round/sleepy_box.gd"
 }, {
-"base": "TextureRect",
+"base": "Control",
 "class": "RoundSleepyBoxBox",
 "language": "GDScript",
 "path": "res://scene/round/sleepy_box_box.gd"
@@ -98,6 +98,11 @@ _global_script_classes=[ {
 "class": "RoundStage",
 "language": "GDScript",
 "path": "res://scene/round/roundstage.gd"
+}, {
+"base": "RoundStage",
+"class": "RoundWinner",
+"language": "GDScript",
+"path": "res://scene/round/winner.gd"
 } ]
 _global_script_class_icons={
 "CharacterControl": "",
@@ -117,7 +122,8 @@ _global_script_class_icons={
 "RoundChooseANumberPlayer": "",
 "RoundSleepyBox": "",
 "RoundSleepyBoxBox": "",
-"RoundStage": ""
+"RoundStage": "",
+"RoundWinner": ""
 }
 
 [application]

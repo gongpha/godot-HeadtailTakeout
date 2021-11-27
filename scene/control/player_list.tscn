@@ -26,9 +26,9 @@ __meta__ = {
 
 [node name="vbox" type="VBoxContainer" parent="."]
 margin_left = 8.0
-margin_top = 357.0
+margin_top = 345.0
 margin_right = 1358.0
-margin_bottom = 411.0
+margin_bottom = 423.0
 size_flags_vertical = 4
 
 [node name="hbox" type="HBoxContainer" parent="vbox"]
@@ -108,3 +108,12 @@ scroll_vertical_enabled = false
 
 [node name="headtail" type="HBoxContainer" parent="vbox/sc_headtail"]
 custom_constants/separation = 16
+
+[node name="back" type="Button" parent="vbox"]
+margin_top = 58.0
+margin_right = 112.0
+margin_bottom = 78.0
+size_flags_horizontal = 0
+text = "#back_to_menu"
+
+[connection signal="pressed" from="vbox/back" to="." method="_on_back_pressed"]

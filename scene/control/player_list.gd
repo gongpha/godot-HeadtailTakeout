@@ -50,3 +50,13 @@ func fetch_board_list() :
 		
 func _board_updated() :
 	fetch_board_list()
+
+
+func _on_back_pressed() :
+	GameMaster.current_round = null
+	GameMaster.player_current = null
+	GameMaster.players.clear()
+	GameMaster.players_comp.clear()
+	GameMaster.players_board.clear()
+	GameMaster.current_round_idx = -1
+	get_tree().change_scene("res://scene/control/mainmenu.tscn")

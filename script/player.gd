@@ -11,6 +11,8 @@ enum Type {
 var name := "@@@" # placeholder
 var icon_bg : Texture # the base icon (circle)
 var icon_fg : Texture # face
+var icon_bg_win : Texture # face when win
+var icon_fg_win : Texture # face when win
 var icon_hue : float # more variation
 var type : int = Type.BOT # start as bot
 var eliminated := false # fail yet

@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scene/control/mainmenu.gd" type="Script" id=1]
 [ext_resource path="res://resource/texture/flag/lang_en_us.png" type="Texture" id=2]
 [ext_resource path="res://resource/texture/flag/lang_th.png" type="Texture" id=3]
 [ext_resource path="res://resource/deftheme.tres" type="Theme" id=4]
+[ext_resource path="res://resource/texture/image/bg4.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "go_play"
@@ -35,6 +36,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="bg" type="TextureRect" parent="."]
+modulate = Color( 0.41, 0.41, 0.41, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 5 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="margin" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -56,30 +67,44 @@ __meta__ = {
 }
 
 [node name="vbox" type="VBoxContainer" parent="margin/center"]
-margin_left = 614.0
-margin_top = 326.0
-margin_right = 702.0
-margin_bottom = 392.0
+margin_left = 609.0
+margin_top = 297.0
+margin_right = 707.0
+margin_bottom = 421.0
 grow_horizontal = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="label1" type="Label" parent="margin/center/vbox"]
+margin_right = 98.0
+margin_bottom = 25.0
+text = "#your_name"
+align = 1
+
 [node name="name_field" type="LineEdit" parent="margin/center/vbox"]
-margin_right = 88.0
-margin_bottom = 29.0
+margin_top = 29.0
+margin_right = 98.0
+margin_bottom = 58.0
 text = "Player"
 placeholder_text = "#player"
 
+[node name="label2" type="Label" parent="margin/center/vbox"]
+margin_top = 62.0
+margin_right = 98.0
+margin_bottom = 87.0
+text = "#bot_count"
+align = 1
+
 [node name="hbox_count" type="HBoxContainer" parent="margin/center/vbox"]
-margin_top = 33.0
-margin_right = 88.0
-margin_bottom = 33.0
+margin_top = 91.0
+margin_right = 98.0
+margin_bottom = 91.0
 
 [node name="start" type="Button" parent="margin/center/vbox"]
-margin_top = 37.0
-margin_right = 88.0
-margin_bottom = 66.0
+margin_top = 95.0
+margin_right = 98.0
+margin_bottom = 124.0
 text = "#start"
 
 [node name="hbox" type="HBoxContainer" parent="margin"]

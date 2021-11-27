@@ -14,6 +14,7 @@ onready var tail_el_box := $centerboard/vbox/panel_con/vbox/vbox_e/hbox/tail as 
 
 #var round_ : RoundStage
 var confirm_end_round : bool = false # TRUE if confirm button pressing will go next round
+var skip_ani : bool = false
 
 func _ready() :
 	GameMaster.connect("board_updated", list, "_board_updated")
@@ -41,9 +42,16 @@ func _prepare_round(round_ : RoundStage) :
 	yield(ani, "animation_finished")
 	ani.play("show_competitor_n_hide")
 	yield(ani, "animation_finished")
-	ani.play("show_round_topic")
 	
 	confirm_end_round = false
+	
+	if round_.description == "" :
+		# empty ? just skip it
+		skip_ani = true
+		_on_confirm_pressed()
+	else :
+		skip_ani = false
+		ani.play("show_round_topic")
 
 func _changed_round() :
 	#ani.play("close_round")
@@ -77,7 +85,8 @@ func _on_confirm_pressed() :
 		# NEXT !
 		GameMaster.prepare_round()
 	else :
-		ani.play("hide_round_topic")
-		yield(ani, "animation_finished")
+		if not skip_ani :
+			ani.play("hide_round_topic")
+			yield(ani, "animation_finished")
 		GameMaster.start_round()
 	

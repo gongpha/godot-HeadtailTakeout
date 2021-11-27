@@ -13,6 +13,10 @@ keys,en,th
 #list_all,%d players,ทั้งหมด %d คน
 #list_comp,In match %d players,ในการแข่งขัน %d คน
 #list_eli,%d players are eliminated,ตกรอบไปแล้ว %d คน
+#back_to_menu,Back to Mainmenu,กลับไปยังเมนูหลัก
+#winner_header,The winner is %s!,ผู้ชนะคือ %s!
+#bot_count,Number of bots,จำนวนผู้เล่นบอท
+#your_name,Your name,ชื่อของคุณ
 #status_passed,You are qualified!,คุณผ่านเข้ารอบแล้ว!
 #status_eliminated_head,You are eliminated as head,คุณตกรอบ เพราะได้เป็นหัว
 #status_eliminated_tail,You are eliminated as tail,คุณตกรอบ เพราะได้เป็นท้าย
