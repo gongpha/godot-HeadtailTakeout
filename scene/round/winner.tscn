@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scene/round/winner.gd" type="Script" id=1]
 [ext_resource path="res://resource/texture/image/bg3.png" type="Texture" id=2]
 [ext_resource path="res://resource/texture/charac/char_cirbig1.atlastex" type="Texture" id=3]
 [ext_resource path="res://resource/texture/charac/char1happy.atlastex" type="Texture" id=4]
 [ext_resource path="res://resource/font/head_font.tres" type="DynamicFont" id=5]
+[ext_resource path="res://resource/texture/trophy.atlastex" type="Texture" id=6]
+[ext_resource path="res://resource/texture/winner_stage.atlastex" type="Texture" id=7]
 
 [node name="stage" type="Control"]
 anchor_right = 1.0
@@ -33,30 +35,64 @@ __meta__ = {
 }
 
 [node name="vbox" type="VBoxContainer" parent="center"]
-margin_left = 596.0
-margin_top = 269.0
-margin_right = 770.0
-margin_bottom = 499.0
+margin_left = 553.0
+margin_top = 207.0
+margin_right = 813.0
+margin_bottom = 561.0
+custom_constants/separation = 0
 
 [node name="text" type="Label" parent="center/vbox"]
-margin_right = 174.0
+margin_right = 260.0
 margin_bottom = 98.0
 custom_fonts/font = ExtResource( 5 )
 text = "@@@"
 align = 1
 
-[node name="winner" type="TextureRect" parent="center/vbox"]
-margin_left = 23.0
-margin_top = 102.0
-margin_right = 151.0
-margin_bottom = 230.0
+[node name="hbox" type="HBoxContainer" parent="center/vbox"]
+margin_top = 98.0
+margin_right = 260.0
+margin_bottom = 226.0
+alignment = 1
+
+[node name="winner" type="TextureRect" parent="center/vbox/hbox"]
+margin_right = 128.0
+margin_bottom = 128.0
 size_flags_horizontal = 4
 texture = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="face" type="TextureRect" parent="center/vbox/winner"]
+[node name="face" type="TextureRect" parent="center/vbox/hbox/winner"]
 margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="rot" type="Control" parent="center/vbox/hbox"]
+margin_left = 132.0
+margin_right = 260.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 128, 128 )
+rect_pivot_offset = Vector2( 989, 50 )
+
+[node name="trophy" type="TextureRect" parent="center/vbox/hbox/rot"]
+margin_left = -10.0
+margin_top = -31.0
+margin_right = 118.0
+margin_bottom = 129.0
+rect_pivot_offset = Vector2( 96, 32 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="stage" type="TextureRect" parent="center/vbox"]
+margin_left = 2.0
+margin_top = 226.0
+margin_right = 258.0
+margin_bottom = 354.0
+size_flags_horizontal = 4
+texture = ExtResource( 7 )

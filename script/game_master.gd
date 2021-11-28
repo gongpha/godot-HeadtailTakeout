@@ -4,6 +4,7 @@ extends Node
 
 var lobbyinput_bot_count : int = 10
 var lobbyinput_name : String
+var lobbyinput_mode : int
 
 var default_round_scenes := [
 	#preload("res://scene/round/winner.tscn"),
@@ -48,6 +49,8 @@ var default_character_circles_big := [
 	preload("res://resource/texture/charac/char_cirbig4.atlastex")
 ]
 
+var assigned_client_name : String # from mainmenu
+
 # IN GAME
 var players := [] # ADD WHEN CONFIRM PLAYING. items are Player class
 var players_comp := [] # IN ROUND
@@ -77,6 +80,13 @@ func _generate_player() -> Player :
 func start_game() :
 	# START GAMEEEEEEEEEEEEEEEEEEEEEE (^O^)
 	randomize() # random seed
+	
+	# save that name in file
+	var file := ConfigFile.new()
+	file.set_value("player", "name", lobbyinput_name)
+	file.set_value("player", "count", lobbyinput_bot_count)
+	file.set_value("player", "mode", lobbyinput_mode)
+	file.save("player.cfg")
 	
 	# add self
 	player_current = _generate_player()
@@ -190,3 +200,6 @@ func end_round() :
 
 static func get_sec_string(sec : int) -> String :
 	return "%02d:%02d" % [floor(sec / 60), sec % 60]
+
+func is_player_rival() :
+	return lobbyinput_mode == 1 and GameMaster.players_comp.has(player_id)

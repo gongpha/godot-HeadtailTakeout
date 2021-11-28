@@ -6,9 +6,15 @@ class_name RoundWinner
 var player : Player
 var player_id : int
 
-onready var winner_node : TextureRect = $center/vbox/winner
-onready var face_node : TextureRect = $center/vbox/winner/face
+onready var winner_node : TextureRect = $center/vbox/hbox/winner
+onready var face_node : TextureRect = $center/vbox/hbox/winner/face
 onready var text_node : Label = $center/vbox/text
+
+func _get_status_of_player() -> String :
+	var string := ._get_status_of_player()
+	if string == "" :
+		return "#winner_status"
+	return string
 
 func _ready() :
 	if GameMaster.players_comp.empty() :

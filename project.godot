@@ -151,7 +151,6 @@ enabled=PoolStringArray( "res://addons/localization_editor/plugin.cfg" )
 
 [locale]
 
-test="th"
 translations=PoolStringArray( "res://localization/localizations.en.translation", "res://localization/localizations.th.translation" )
 locale_filter=[ 0, [ "en", "th" ] ]
 

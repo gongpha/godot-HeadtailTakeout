@@ -145,6 +145,12 @@ var trend : PoolVector2Array = [
 	Vector2(500, 9999),
 	Vector2(-1000, 1000), # rare
 ]
+
+var trend_hard : PoolVector2Array = [
+	Vector2(100000, 1000000),
+	Vector2(10000, 100000),
+	Vector2(1000, 10000),
+]
 		
 func start() :
 	last_index = 0
@@ -154,6 +160,15 @@ func start() :
 	if not GameMaster.player_current.eliminated :
 		confirm.disabled = false
 		number.editable = true
+		
+	# for hard mode
+	var big_trend : int
+	if GameMaster.is_player_rival() :
+		var ch_vec : Vector2 = trend_hard[randi() % trend_hard.size()]
+		big_trend = rand_range(ch_vec.x, ch_vec.y)
+		if randi() % 4 == 0 :
+			# sometimes, ITS NEGATIVE
+			big_trend *= -1
 	
 	# random THINK SEC
 	# delay lol
@@ -161,7 +176,11 @@ func start() :
 	for i in GameMaster.players_comp :
 		var p : Player = GameMaster.players[i]
 		
-		var thinksec := rand_range(1, 10)
+		var thinksec : float
+		if not GameMaster.is_player_rival() :
+			thinksec = rand_range(1, 10)
+		else :
+			thinksec = rand_range(0.6, 1) # THINK FASS
 		var timer : Timer
 		var rand : int = -1
 			
@@ -176,9 +195,14 @@ func start() :
 			# dont generate between min and max
 			# ITS TOO LARGE AREA
 			# Just make trend
-			var ch_vec : Vector2 = trend[randi() % trend.size()]
-			
-			timer.connect("timeout", self, "control_chosen", [i, rand_range(ch_vec.x, ch_vec.y)])
+			var number : int
+			if not GameMaster.is_player_rival() :
+				var ch_vec : Vector2 = trend[randi() % trend.size()]
+				number = rand_range(ch_vec.x, ch_vec.y)
+			else :
+				# HEY HEY, GO MILLION. LET BRUH
+				number = big_trend + (randf() * 2 - 1) * big_trend * 0.25
+			timer.connect("timeout", self, "control_chosen", [i, number])
 			add_child(timer)
 			timer.start()
 			

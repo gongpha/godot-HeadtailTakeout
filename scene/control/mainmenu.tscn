@@ -1,10 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scene/control/mainmenu.gd" type="Script" id=1]
 [ext_resource path="res://resource/texture/flag/lang_en_us.png" type="Texture" id=2]
 [ext_resource path="res://resource/texture/flag/lang_th.png" type="Texture" id=3]
 [ext_resource path="res://resource/deftheme.tres" type="Theme" id=4]
 [ext_resource path="res://resource/texture/image/bg4.png" type="Texture" id=5]
+
+[sub_resource type="ButtonGroup" id=3]
+resource_name = "ModeButtons"
 
 [sub_resource type="Animation" id=1]
 resource_name = "go_play"
@@ -67,44 +70,74 @@ __meta__ = {
 }
 
 [node name="vbox" type="VBoxContainer" parent="margin/center"]
-margin_left = 609.0
-margin_top = 297.0
-margin_right = 707.0
-margin_bottom = 421.0
+margin_left = 530.0
+margin_top = 266.0
+margin_right = 785.0
+margin_bottom = 452.0
 grow_horizontal = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="label1" type="Label" parent="margin/center/vbox"]
-margin_right = 98.0
+margin_right = 255.0
 margin_bottom = 25.0
 text = "#your_name"
 align = 1
 
 [node name="name_field" type="LineEdit" parent="margin/center/vbox"]
 margin_top = 29.0
-margin_right = 98.0
+margin_right = 255.0
 margin_bottom = 58.0
 text = "Player"
 placeholder_text = "#player"
 
 [node name="label2" type="Label" parent="margin/center/vbox"]
 margin_top = 62.0
-margin_right = 98.0
+margin_right = 255.0
 margin_bottom = 87.0
 text = "#bot_count"
 align = 1
 
 [node name="hbox_count" type="HBoxContainer" parent="margin/center/vbox"]
 margin_top = 91.0
-margin_right = 98.0
+margin_right = 255.0
 margin_bottom = 91.0
 
-[node name="start" type="Button" parent="margin/center/vbox"]
+[node name="label3" type="Label" parent="margin/center/vbox"]
 margin_top = 95.0
-margin_right = 98.0
-margin_bottom = 124.0
+margin_right = 255.0
+margin_bottom = 120.0
+text = "#mode"
+align = 1
+
+[node name="diff" type="HBoxContainer" parent="margin/center/vbox"]
+margin_top = 124.0
+margin_right = 255.0
+margin_bottom = 153.0
+
+[node name="normal" type="Button" parent="margin/center/vbox/diff"]
+margin_right = 134.0
+margin_bottom = 29.0
+size_flags_horizontal = 3
+toggle_mode = true
+pressed = true
+group = SubResource( 3 )
+text = "#normal_mode"
+
+[node name="hard" type="Button" parent="margin/center/vbox/diff"]
+margin_left = 138.0
+margin_right = 255.0
+margin_bottom = 29.0
+size_flags_horizontal = 3
+toggle_mode = true
+group = SubResource( 3 )
+text = "#hard_mode"
+
+[node name="start" type="Button" parent="margin/center/vbox"]
+margin_top = 157.0
+margin_right = 255.0
+margin_bottom = 186.0
 text = "#start"
 
 [node name="hbox" type="HBoxContainer" parent="margin"]
@@ -166,6 +199,8 @@ expand = true
 anims/go_play = SubResource( 1 )
 anims/start = SubResource( 2 )
 
+[connection signal="pressed" from="margin/center/vbox/diff/normal" to="." method="_on_normal_pressed"]
+[connection signal="pressed" from="margin/center/vbox/diff/hard" to="." method="_on_hard_pressed"]
 [connection signal="pressed" from="margin/center/vbox/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="margin/hbox/minisettings/lang_en" to="." method="_on_lang_en_pressed"]
 [connection signal="pressed" from="margin/hbox/minisettings/lang_th" to="." method="_on_lang_th_pressed"]

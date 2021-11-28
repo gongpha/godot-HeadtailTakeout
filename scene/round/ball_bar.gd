@@ -92,5 +92,9 @@ func stop_cpu() :
 
 func _on_cpurand_timeout() :
 	set_control(not control)
-	cpurand.wait_time = rand_range(0.1, 0.6)
+	if GameMaster.is_player_rival() :
+		# HEY. GO CONSTANT
+		cpurand.wait_time = 0.5 + randf() * 0.01
+	else :
+		cpurand.wait_time = rand_range(0.1, 0.6)
 	cpurand.start()

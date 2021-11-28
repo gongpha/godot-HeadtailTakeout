@@ -139,9 +139,14 @@ func start() :
 	sectimer.start()
 	
 	# random how bot will out
-	var median_list := [15, 30, 45, 60]
+	var median_second : int
+	var median_list : Array
+	if GameMaster.is_player_rival() :
+		median_list = [1, 5, 10, 15, 20, 30]
+	else :
+		median_list = [15, 30, 45, 60]
 	median_list.shuffle()
-	var median_second := median_list[0] as int
+	median_second = median_list[0]
 	
 	for i in GameMaster.players_comp :
 		var p : Player = GameMaster.players[i]
@@ -152,7 +157,12 @@ func start() :
 			# if this is bot. Make timer
 			timer = Timer.new()
 			# add more time for reality (+RAND*median) maybe faster or slower
-			timer.wait_time = max(median_second + (randf() * 2 - 1) * median_second, 5) # more than 5 secs
+			if not GameMaster.is_player_rival() :
+				# normal
+				timer.wait_time = max(median_second + (randf() * 2 - 1) * median_second, 5) # more than 5 secs
+			else :
+				# hey hey u. listen. im gonna get up here.
+				timer.wait_time = median_second + (randf() * 2 - 1) * 3
 			timer.one_shot = true
 			timer.connect("timeout", self, "control_raise", [i])
 			add_child(timer)

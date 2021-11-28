@@ -3,9 +3,19 @@
 tool
 class_name LocalizationKeys
 
+const Copy = "Copy"
+const Cut = "Cut"
+const Paste = "Paste"
+const Clear = "Clear"
+const Undo = "Undo"
+const Redo = "Redo"
+const Select_All = "Select All"
 const #start = "#start"
 const ##bot_names = "##bot_names"
 const #competitor = "#competitor"
+const #mode = "#mode"
+const #normal_mode = "#normal_mode"
+const #hard_mode = "#hard_mode"
 const #eliminated_players = "#eliminated_players"
 const #eliminated = "#eliminated"
 const #ok = "#ok"
@@ -19,6 +29,7 @@ const #list_comp = "#list_comp"
 const #list_eli = "#list_eli"
 const #back_to_menu = "#back_to_menu"
 const #winner_header = "#winner_header"
+const #winner_status = "#winner_status"
 const #bot_count = "#bot_count"
 const #your_name = "#your_name"
 const #status_passed = "#status_passed"
@@ -46,9 +57,19 @@ const #Rbalancetheball_control = "#Rbalancetheball_control"
 const #Rbalancetheball_checking = "#Rbalancetheball_checking"
 
 const KEYS = [
+ "Copy",
+ "Cut",
+ "Paste",
+ "Clear",
+ "Undo",
+ "Redo",
+ "Select All",
  "#start",
  "##bot_names",
  "#competitor",
+ "#mode",
+ "#normal_mode",
+ "#hard_mode",
  "#eliminated_players",
  "#eliminated",
  "#ok",
@@ -62,6 +83,7 @@ const KEYS = [
  "#list_eli",
  "#back_to_menu",
  "#winner_header",
+ "#winner_status",
  "#bot_count",
  "#your_name",
  "#status_passed",

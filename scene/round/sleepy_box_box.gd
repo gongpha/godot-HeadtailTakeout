@@ -40,17 +40,20 @@ func update_data() :
 				face_node.hide()
 			else :
 				box.texture = open_tex
-				sign_node.show()
+				#sign_node.show()
 				character_node.texture = player.icon_bg
 				face_node.texture = player.icon_fg
 				character_node.show()
 				face_node.show()
 				if GameMaster.current_round._get_head() == player_id :
+					sign_node.show()
 					in_node.texture = head_tex
 				elif GameMaster.current_round._get_tail() == player_id :
+					sign_node.show()
 					in_node.texture = tail_tex
 				else :
-					in_node.texture = pass_tex
+					sign_node.hide()
+					#in_node.texture = pass_tex
 					
 				
 			
