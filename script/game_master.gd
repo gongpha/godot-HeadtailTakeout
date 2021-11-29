@@ -8,6 +8,7 @@ var lobbyinput_mode : int
 
 var default_round_scenes := [
 	#preload("res://scene/round/winner.tscn"),
+	preload("res://scene/round/hammer.tscn"),
 	preload("res://scene/round/balance_the_ball.tscn"),
 	preload("res://scene/round/sleepy_box.tscn"),
 	preload("res://scene/round/choose_a_number.tscn")
@@ -130,6 +131,14 @@ func start_game() :
 	
 func board_add_player(id : int, pos : int) :
 	players_board.insert(pos, id)
+	
+	if not current_round._can_player_update_board() :
+		return
+	
+	emit_signal("board_updated")
+	
+func board_sort() :
+	players_board.sort_custom(current_round, "_compare_id")
 	
 	if not current_round._can_player_update_board() :
 		return

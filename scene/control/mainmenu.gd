@@ -19,7 +19,7 @@ var ui_ready := false # TRUE when animation playing finished
 var button_list := []
 
 const NUMLIST := [
-	6, 8, 10, 16, 24, 32, 40, 48, 56, 64
+	2, 6, 8, 10, 16, 24, 32, 40, 48, 56, 64
 ]
 
 func _ready() :

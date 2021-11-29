@@ -7,6 +7,7 @@ onready var centerboard := $centerboard as CenterContainer
 onready var round_text := $centerboard/vbox/round_text as Label
 onready var round_desc := $centerboard/vbox/panel_con/vbox/round_desc as Label
 onready var root_stage := $vbox/root_stage as Control
+onready var confirm_button := $centerboard/vbox/panel_con/vbox/confirm as Button
 
 onready var vbox_e := $centerboard/vbox/panel_con/vbox/vbox_e as VBoxContainer
 onready var head_el_box := $centerboard/vbox/panel_con/vbox/vbox_e/hbox/head as PlayerProfileBox
@@ -51,6 +52,7 @@ func _prepare_round(round_ : RoundStage) :
 		_on_confirm_pressed()
 	else :
 		skip_ani = false
+		confirm_button.disabled = false
 		ani.play("show_round_topic")
 
 func _changed_round() :
@@ -75,12 +77,14 @@ func _round_end() :
 	round_desc.hide()
 	round_text.text = "#round_end"
 	
-	
+	confirm_button.disabled = false
 	ani.play("show_round_topic")
 	
 
 
 func _on_confirm_pressed() :
+	confirm_button.disabled = true
+	
 	if confirm_end_round :
 		# NEXT !
 		GameMaster.prepare_round()

@@ -11,6 +11,7 @@ onready var status_text := $vbox/hbox/status # status textfor show your current 
 onready var all_label := $vbox/hbox/all
 onready var comp_label := $vbox/hbox/comp
 onready var eli_label := $vbox/hbox/eli
+onready var delay : Timer = $delay
 
 func _ready() :
 	pass
@@ -33,6 +34,8 @@ func fetch_comp_list() :
 	eli_label.text = tr("#list_eli") % (GameMaster.players.size() - GameMaster.players_comp.size())
 		
 func fetch_board_list() :
+	if not delay.is_stopped() and GameMaster.current_round.is_board_unreliable() :
+		return
 	# like above
 	
 	# clear old first (delete all)
@@ -47,6 +50,7 @@ func fetch_board_list() :
 		board.add_child(box)
 		
 	status_text.text = GameMaster.current_round._get_status_of_player()
+	delay.start()
 		
 func _board_updated() :
 	fetch_board_list()

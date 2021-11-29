@@ -10,6 +10,7 @@ const Clear = "Clear"
 const Undo = "Undo"
 const Redo = "Redo"
 const Select_All = "Select All"
+const #2564_author = "#2564_author"
 const #start = "#start"
 const ##bot_names = "##bot_names"
 const #competitor = "#competitor"
@@ -55,6 +56,8 @@ const #Rbalancetheball_desc = "#Rbalancetheball_desc"
 const #Rbalancetheball_status = "#Rbalancetheball_status"
 const #Rbalancetheball_control = "#Rbalancetheball_control"
 const #Rbalancetheball_checking = "#Rbalancetheball_checking"
+const #Rhammer_name = "#Rhammer_name"
+const #Rhammer_desc = "#Rhammer_desc"
 
 const KEYS = [
  "Copy",
@@ -64,6 +67,7 @@ const KEYS = [
  "Undo",
  "Redo",
  "Select All",
+ "#2564_author",
  "#start",
  "##bot_names",
  "#competitor",
@@ -108,5 +112,7 @@ const KEYS = [
  "#Rbalancetheball_desc",
  "#Rbalancetheball_status",
  "#Rbalancetheball_control",
- "#Rbalancetheball_checking"
+ "#Rbalancetheball_checking",
+ "#Rhammer_name",
+ "#Rhammer_desc"
 ]

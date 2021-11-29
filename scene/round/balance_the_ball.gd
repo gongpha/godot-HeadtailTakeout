@@ -191,7 +191,7 @@ func _on_countdown_timeout() :
 	_update_timer_text()
 	
 func _compare(a, b) -> bool :
-	return a.bar.value > b.bar.value
+	return a.data.bar.value > b.data.bar.value
 	
 func _on_anitime_timeout() :
 	var i : int = GameMaster.players_comp[anitime_current_id]

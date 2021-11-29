@@ -116,4 +116,8 @@ margin_bottom = 78.0
 size_flags_horizontal = 0
 text = "#back_to_menu"
 
+[node name="delay" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+
 [connection signal="pressed" from="vbox/back" to="." method="_on_back_pressed"]

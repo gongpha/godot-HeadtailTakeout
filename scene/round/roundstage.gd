@@ -14,7 +14,10 @@ var started : bool = false
 
 # abstract function for compare from sort function
 func _compare(a, b) -> bool :
-	return a > b
+	return a.data > b.data
+	
+func _compare_id(a, b) -> bool :
+	return GameMaster.players[a].data > GameMaster.players[b].data
 	
 # func to show data to gui
 func _show_data(p : Player) -> String :
@@ -43,12 +46,15 @@ func _get_status_of_player() -> String :
 			return "#status_passed"
 	return ""
 	
+func _sort_board() :
+	GameMaster.board_sort()
+	
 func _put_player_to_board(id : int) :
 	# find pos (Sort)
 	var index_to_add : int = 0
 	
 	for p in GameMaster.players_board :
-		var greater := _compare(GameMaster.players[id].data, GameMaster.players[p].data)
+		var greater := _compare(GameMaster.players[id], GameMaster.players[p])
 		if not greater :
 			index_to_add += 1
 			continue
@@ -58,6 +64,8 @@ func _put_player_to_board(id : int) :
 	
 	GameMaster.board_add_player(id, index_to_add)
 	
+func is_board_unreliable() -> bool :
+	return false
 #func _show_board_to_player(id : int) :
 #	# id == -1 is all player
 
