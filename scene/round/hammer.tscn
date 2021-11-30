@@ -39,6 +39,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="inputs" type="Label" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+custom_fonts/font = ExtResource( 3 )
+text = "#Rhammer_inputs"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="countdown" type="Timer" parent="."]
 one_shot = true
 

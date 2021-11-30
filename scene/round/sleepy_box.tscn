@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scene/round/sleepy_box.gd" type="Script" id=1]
 [ext_resource path="res://resource/texture/image/bg2.png" type="Texture" id=2]
 [ext_resource path="res://resource/font/giant_font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://resource/sound/wav/open.wav" type="AudioStream" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "exit_box"
@@ -115,6 +116,9 @@ __meta__ = {
 anims/exit_box = SubResource( 1 )
 
 [node name="sectimer" type="Timer" parent="."]
+
+[node name="open" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
 
 [connection signal="pressed" from="center/vbox/exit_box" to="." method="_on_exit_box_pressed"]
 [connection signal="timeout" from="sectimer" to="." method="_on_sectimer_timeout"]

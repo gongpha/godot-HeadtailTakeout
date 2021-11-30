@@ -9,6 +9,7 @@ var player_id : int
 onready var winner_node : TextureRect = $center/vbox/hbox/winner
 onready var face_node : TextureRect = $center/vbox/hbox/winner/face
 onready var text_node : Label = $center/vbox/text
+onready var cheer : AudioStreamPlayer = $cheer
 
 func _get_status_of_player() -> String :
 	var string := ._get_status_of_player()
@@ -30,3 +31,6 @@ func _ready() :
 	face_node.texture = winner.icon_fg_win
 	
 	text_node.text = tr("#winner_header") % winner.name
+	
+func start() :
+	cheer.play()

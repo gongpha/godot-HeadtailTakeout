@@ -58,6 +58,7 @@ const #Rbalancetheball_control = "#Rbalancetheball_control"
 const #Rbalancetheball_checking = "#Rbalancetheball_checking"
 const #Rhammer_name = "#Rhammer_name"
 const #Rhammer_desc = "#Rhammer_desc"
+const #Rhammer_inputs = "#Rhammer_inputs"
 
 const KEYS = [
  "Copy",
@@ -114,5 +115,6 @@ const KEYS = [
  "#Rbalancetheball_control",
  "#Rbalancetheball_checking",
  "#Rhammer_name",
- "#Rhammer_desc"
+ "#Rhammer_desc",
+ "#Rhammer_inputs"
 ]

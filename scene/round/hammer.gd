@@ -10,6 +10,7 @@ onready var vp : Viewport = $vc/vp
 onready var map : RoundHammerMap = $vc/vp/map
 onready var time : Label = $time
 onready var countdown : Timer = $countdown
+onready var inputs : Label = $inputs
 
 var player_scene : PackedScene = preload("res://scene/round/hammer_player.tscn")
 
@@ -67,6 +68,7 @@ func _ready() :
 	else :
 		# spec random
 		players_list[randi() % players_list.size()].cam.current = true
+		inputs.queue_free()
 			
 func start() :
 	countdown.start()
@@ -81,12 +83,16 @@ func _show_data(p : Player) -> String :
 func _hit(to : Player, to_id : int) :
 	to.data += 1 # ++
 	
+	var min_data : int = GameMaster.players[min_id].data
+	var max_data : int = GameMaster.players[max_id].data
 	
-	if to.data < GameMaster.players[min_id].data or min_id == -1 :
+	if to.data <= min_data or min_id == -1 :
 		min_id = to_id
-	if to.data > GameMaster.players[max_id].data or max_id == -1 :
+	if to.data >= max_data or max_id == -1 :
 		max_id = to_id
 	
+	#countdown.paused = (to.data == min_data or min_id == -1) or (to.data == max_data or max_id == -1)
+
 	if not GameMaster.players_board.has(to_id) :
 		# new here ? come here dud
 		_put_player_to_board(to_id)

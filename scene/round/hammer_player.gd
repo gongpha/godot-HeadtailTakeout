@@ -15,6 +15,7 @@ onready var cam : Camera2D = $cam
 onready var push : Area2D = $push
 onready var attack : Area2D = $attack
 onready var sound : AudioStreamPlayer2D = $sound
+onready var jump_s : AudioStreamPlayer2D = $jump
 onready var attack_col : CollisionShape2D = $attack/col
 onready var dmgface : Timer = $dmgface
 
@@ -136,6 +137,7 @@ func _physics_process(delta : float) :
 		vel.y = 0
 		if jump :
 			vel.y -= 1024
+			jump_s.play()
 	
 	vel.x = lerp(vel.x, right_axis * 512, delta * 15)
 	#print(on_floor_ray.is_colliding())

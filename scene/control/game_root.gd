@@ -12,10 +12,17 @@ onready var confirm_button := $centerboard/vbox/panel_con/vbox/confirm as Button
 onready var vbox_e := $centerboard/vbox/panel_con/vbox/vbox_e as VBoxContainer
 onready var head_el_box := $centerboard/vbox/panel_con/vbox/vbox_e/hbox/head as PlayerProfileBox
 onready var tail_el_box := $centerboard/vbox/panel_con/vbox/vbox_e/hbox/tail as PlayerProfileBox
+onready var bgm := $bgm as AudioStreamPlayer
 
 #var round_ : RoundStage
 var confirm_end_round : bool = false # TRUE if confirm button pressing will go next round
 var skip_ani : bool = false
+
+var bgms := [
+	"res://resource/sound/mp3/20.mp3",
+	"res://resource/sound/mp3/31.mp3"
+]
+var selected_bgm : AudioStream
 
 func _ready() :
 	GameMaster.connect("board_updated", list, "_board_updated")
@@ -24,6 +31,10 @@ func _ready() :
 	
 	#GameMaster.game_root = self
 	GameMaster.prepare_round()
+	
+	selected_bgm = load(bgms[randi() % bgms.size()])
+	bgm.stream = selected_bgm
+	bgm.play()
 
 func _prepare_round(round_ : RoundStage) :
 	centerboard.rect_pivot_offset = centerboard.rect_size / 2

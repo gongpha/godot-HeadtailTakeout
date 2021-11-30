@@ -303,4 +303,7 @@ anims/hide_round_topic = SubResource( 4 )
 anims/show_competitor_n_hide = SubResource( 1 )
 anims/show_round_topic = SubResource( 3 )
 
+[node name="bgm" type="AudioStreamPlayer" parent="."]
+volume_db = -15.0
+
 [connection signal="pressed" from="centerboard/vbox/panel_con/vbox/confirm" to="." method="_on_confirm_pressed"]

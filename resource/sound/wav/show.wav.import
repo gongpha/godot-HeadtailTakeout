@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/bonk.wav-8c8f9b9ff06e045233fd7903da4c3505.sample"
+path="res://.import/show.wav-6521079641a2036f53f07e2559a2a554.sample"
 
 [deps]
 
-source_file="res://resource/sound/bonk.wav"
-dest_files=[ "res://.import/bonk.wav-8c8f9b9ff06e045233fd7903da4c3505.sample" ]
+source_file="res://resource/sound/wav/show.wav"
+dest_files=[ "res://.import/show.wav-6521079641a2036f53f07e2559a2a554.sample" ]
 
 [params]
 

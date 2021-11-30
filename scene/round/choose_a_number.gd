@@ -12,6 +12,7 @@ onready var confirm := $center/vbox/confirm
 onready var head := $center/vbox/head
 onready var players := $margin/scroll/center/players
 onready var anitime := $anitime
+onready var show := $show
 
 const MIN_NUMBER : int = -1000000
 const MAX_NUMBER : int = 1000000
@@ -228,6 +229,7 @@ func _on_anitime_timeout() :
 		AniTimeMethod.GOING_TO_SHOW_SIGN :
 			# show you SIGN
 			p.data[2] = 2
+			show.play()
 			anitime_method = AniTimeMethod.PUT_IN_BOARD
 			anitime.start()
 			

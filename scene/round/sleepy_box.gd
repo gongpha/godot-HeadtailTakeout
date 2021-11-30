@@ -10,6 +10,7 @@ onready var inside := $inside
 onready var exit_box := $center/vbox/exit_box
 onready var time_node := $center/vbox/time
 onready var sectimer := $sectimer
+onready var open : AudioStreamPlayer = $open
 
 var box_scene : PackedScene = preload("res://scene/round/sleepy_box_box.tscn")
 var boxes_list := []
@@ -45,6 +46,9 @@ func control_raise(from_id : int, last : bool = false) :
 	else :
 		p.data[2] = sec
 	_put_player_to_board(from_id)
+	
+	if _can_player_update_board() :
+		open.play()
 	last_index += 1
 	
 	# if he are you. stop showing dark overlay
